@@ -156,12 +156,6 @@ All of these projects are built upon a **personal modular Flutter framework**, d
 
 ---
 <div align="center">
-  <img src="image/logo_quantive.png" alt="Qodexus Banner" style="width: 256px; height: 256px"/>
-  <p style="font-size: 30px"><strong>Qodexus</strong></p>
-  <p><em>Architect of pragmatic solutions, from concept to production.</em></p>
-</div>
-
-<div align="center">
 <a href="https://materiaeobscurataelab.xyz/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-3423A6?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Link to Portfolio"/></a>
 </div>
 
@@ -293,11 +287,6 @@ L'ensemble de ces projets s'appuie sur un **framework Flutter modulaire personne
 * **Séparation des responsabilités** : Cloisonnement strict entre logique métier, UI, données et configuration.
 
 ---
-<div align="center">
-  <img src="image/logo_quantive.png" alt="AuroriaLink Banner" style="width: 256px; height: 256px"/>
-  <p style="font-size: 30px"><strong>Qodexus</strong></p>
-  <p><em>Architecte de solutions pragmatiques, du concept à la production.</em></p>
-</div>
 
 <div align="center">
 <a href="https://materiaeobscurataelab.xyz/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-3423A6?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Lien vers le Portfolio"/></a>
