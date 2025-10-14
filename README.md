@@ -49,6 +49,7 @@ This approach ensures absolute traceability and anchors communication directly w
 ### ⚠️ Project Status: Alpha Version
 
 > This project is currently in active development. Bugs and unexpected behaviors are therefore likely. All feedback is welcome.
+> Please note: Microsoft email addresses do not work. Only Gmail addresses work at this time.
 
 ---
 
@@ -247,6 +248,7 @@ Cette approche garantit une traçabilité absolue et ancre la communication dire
 ### ⚠️ Statut du projet : Version Alpha
 
 > Ce projet est actuellement en phase de développement actif. Des bugs et des comportements inattendus sont donc probables. Toute contribution ou retour d'expérience est le bienvenu.
+> Attention : les adresses e-mail Microsoft ne fonctionnent pas. Seules les adresses Gmail fonctionnent pour le moment.
 
 ---
 
