@@ -19,14 +19,16 @@ This approach ensures absolute traceability and anchors communication directly w
 
 ## 🚀 Get the Latest Version
 
+- version 0.0.3
+
 <div align="center">
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.2/app-android.apk">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.3/app-android.apk">
     <img src="https://img.shields.io/badge/Download%20for-Android-3DDC84?style=for-the-badge&logo=android" alt="Download for Android"/>
   </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.2/windows.tar.gz">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.3/windows.zip">
     <img src="https://img.shields.io/badge/Download%20for-Windows-0078D6?style=for-the-badge&logo=windows" alt="Download for Windows"/>
   </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.2/linux.tar.gz">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.3/linux.tar.gz">
     <img src="https://img.shields.io/badge/Download%20for-Linux-FCC624?style=for-the-badge&logo=linux" alt="Download for Linux"/>
   </a>
 </div>
@@ -255,13 +257,13 @@ Cette approche garantit une traçabilité absolue et ancre la communication dire
 ## 🚀 Télécharger la dernière version
 
 <div align="center">
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.2/app-android.apk">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.3/app-android.apk">
     <img src="https://img.shields.io/badge/Download%20for-Android-3DDC84?style=for-the-badge&logo=android" alt="Android"/>
   </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.2/windows.tar.gz">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.3/windows.zip">
     <img src="https://img.shields.io/badge/Download%20for-Windows-0078D6?style=for-the-badge&logo=windows" alt="Windows"/>
   </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.2/linux.tar.gz">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.3/linux.tar.gz">
     <img src="https://img.shields.io/badge/Download%20for-Linux-FCC624?style=for-the-badge&logo=linux" alt="Linux"/>
   </a>
 </div>
