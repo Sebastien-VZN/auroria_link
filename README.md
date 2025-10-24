@@ -19,7 +19,7 @@ This approach ensures absolute traceability and anchors communication directly w
 
 ## 🚀 Get the Latest Version
 
-- version 0.0.3
+- version 0.0.4
 
 <div align="center">
   <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.4/app-android.apk">
