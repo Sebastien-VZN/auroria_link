@@ -11,24 +11,26 @@
 
 **AuroriaLink** is a contextual, real-time team messaging solution designed to solve the desynchronization between communication and production tools.
 
-The fundamental architectural principle is the **contextual link**: each discussion thread is intrinsically linked to a specific production element. The conversation is no longer an isolated entity but dynamic metadata of the object to which it relates, whether it is **a node in a project tree (mindmap `🧠`)** or **a task in a timeline planner (`🗓️`)**.
+The fundamental architectural principle is the **contextual link**: each discussion thread is intrinsically linked to a specific production element. The conversation is no longer an isolated entity but the dynamic metadata of the object to which it relates, whether it is **a node in a project tree (mindmap `🧠`)** or **a task in a timeline planner (`🗓️`)**.
 
 This approach ensures absolute traceability and anchors communication directly within the workflow, eliminating the informational noise of general-purpose channels.
+
+Built with a core philosophy of **intelligent optimization**, AuroriaLink minimizes server costs through smart resource management while maintaining performance and security.
 
 ---
 
 ## 🚀 Get the Latest Version
 
-- version 0.0.5 - 28/10/2025
+- version 0.0.6 - 30/10/2025
 
 <div align="center">
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.5/app-android.apk">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/app-android.apk">
     <img src="https://img.shields.io/badge/Download%20for-Android-3DDC84?style=for-the-badge&logo=android" alt="Download for Android"/>
   </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.5/windows.zip">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/windows.zip">
     <img src="https://img.shields.io/badge/Download%20for-Windows-0078D6?style=for-the-badge&logo=windows" alt="Download for Windows"/>
   </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.5/linux.tar.gz">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/linux.tar.gz">
     <img src="https://img.shields.io/badge/Download%20for-Linux-FCC624?style=for-the-badge&logo=linux" alt="Download for Linux"/>
   </a>
 </div>
@@ -58,9 +60,14 @@ This approach ensures absolute traceability and anchors communication directly w
 ### ✨ Key Features
 
 -   **⚡ Real-Time Communication**: Architecture based on a **WebSocket (Node.js)** server for instant, full-duplex exchanges.
--   **🔒 Absolute Privacy & Encryption**: The messaging is **100% private**. All messages and files are **fully encrypted**, both in transit and at rest on the server, ensuring maximum security.
+-   **🔒 Absolute Privacy & Encryption**: The messaging is **100% private**. All messages and files are **encrypted at rest on the server** with **AES-256-GCM**. Communications transit via **HTTPS** and **WSS (WebSocket Secure)**, ensuring end-to-end maximum security.
+-   **⏱️ Optimized Message Retention**: Messages are retained for 15 days on the server and 3 months on the client, with an option for automatic deletion after 24 hours for maximum confidentiality. Daily cleanup at midnight to limit server load and optimize storage costs.
+-   **📱 Desktop or Mobile Connection**: Switch between your devices (desktop or mobile) with automatic session management by the authentication system.
+-   **🔄 Smart Reconnection**: Automatic reconnection in case of network loss, with 2FA validation when necessary to ensure your session security.
 -   **👥 Private Discussion Channels**: Create partitioned channels for specific teams, projects, or topics, accessible only to authorized members.
 -   **🎤 Sequential Audio Messaging**: Record and send encrypted audio clips to create a fluid vocal conversation thread.
+-   **📎 Comprehensive File Sharing**: Share encrypted documents, images, videos, and audio files (up to 10 files per message, 10 MB per file) directly within your contextual conversations.
+-   **📌 Smart File Management**: Files are retained for 15 days on the server, or 3 months if pinned. Each pin resets the 3-month timer, allowing only important files to be retained and optimizing server storage.
 -   **🧩 Modularity & Integration**: Designed as a standalone module that can be integrated as a service via its API.
 -   **💪 Robust Backend**: A **PHP 8.4 / PostgreSQL** backend ensures data persistence, user management, and permissions.
 -   **🔗 Contextual API**: Securely create and link conversations to external object identifiers.
@@ -78,6 +85,50 @@ This approach ensures absolute traceability and anchors communication directly w
   <a href="https://www.nginx.com/" target="_blank"><img src="https://img.shields.io/badge/Nginx-Stable-269539?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx"/></a>
   <a href="https://www.debian.org/" target="_blank"><img src="https://img.shields.io/badge/Debian-13-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian 13"/></a>
 </p>
+
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                  Client Applications                    │
+│         Flutter (Android, Windows, Linux)               │
+│                                                         │
+│  • Contextual messaging                                 │
+│  • Encrypted file sharing                               │
+│  • Audio messaging                                      │
+└────────────┬─────────────────────┬──────────────────────┘
+             │                     │
+             │ HTTPS               │ WSS (WebSocket Secure)
+             │                     │
+             ↓                     ↓
+┌──────────────────────┐  ┌──────────────────────────────┐
+│   Backend Server     │  │   Real-Time Server           │
+│   PHP 8.4 + Nginx    │  │   Node.js WebSocket          │
+│                      │  │                              │
+│  • Authentication    │  │  • Instant messaging         │
+│  • 2FA via email     │  │  • Connection management     │
+│  • Business logic    │  │  • Heartbeat (30s)           │
+│  • AES-256-GCM       │←─│  • Multi-device support      │
+└──────────┬───────────┘  └──────────────────────────────┘
+           │
+           │ Encrypted storage
+           ↓
+┌──────────────────────────────────────────────────────────┐
+│              PostgreSQL Database                         │
+│                                                          │
+│  • Encrypted messages (15 days server / 3 months client) │
+│  • Smart file retention (pinning system)                 │
+│  • User management & permissions                         │
+└──────────────────────────────────────────────────────────┘
+```
+
+**How it works:**
+1. **Client** connects via secure HTTPS for data and WSS for real-time messaging
+2. **WebSocket Server** handles instant bidirectional communication
+3. **Backend** manages authentication (2FA), encryption (AES-256-GCM), and business logic
+4. **Database** stores encrypted data with intelligent retention policies
 
 ---
 
@@ -123,7 +174,7 @@ And that's it, the application is installed!
 
 > **Warning:** Your antivirus software (including Windows Defender) may show an alert. This is normal behavior for applications that are not certified by Microsoft. Our file is safe.
 
-1.  **Download the `windows.tar.gz` archive** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/tag/).
+1.  **Download the `windows.zip` archive** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/tag/).
 2.  **Decompress the archive.**
 3.  **Run the `.exe` file** located inside the extracted folder.
 4.  If a blue "Windows protected your PC" screen appears:
@@ -247,9 +298,11 @@ Le principe architectural fondamental est le **lien contextuel** : chaque fil de
 
 Cette approche garantit une traçabilité absolue et ancre la communication directement dans le flux de travail, supprimant le bruit informationnel des canaux généralistes.
 
+Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimise les coûts serveur grâce à une gestion intelligente des ressources, tout en maintenant performance et sécurité.
+
 ### ⚠️ Statut du projet : Version Alpha
 
-> Ce projet est actuellement en phase de développement actif. Des bugs et des comportements inattendus sont donc probables. Toute contribution ou retour d'expérience est le bienvenu.
+> Ce projet est actuellement en phase de développement actif. Des bugs et des comportements inattendus sont donc probables. Les contributions et retours d'expérience sont les bienvenus.
 > Attention : les adresses e-mail Microsoft ne fonctionnent pas. Seules les adresses Gmail fonctionnent pour le moment.
 
 ---
@@ -257,13 +310,13 @@ Cette approche garantit une traçabilité absolue et ancre la communication dire
 ## 🚀 Télécharger la dernière version
 
 <div align="center">
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.5/app-android.apk">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/app-android.apk">
     <img src="https://img.shields.io/badge/Download%20for-Android-3DDC84?style=for-the-badge&logo=android" alt="Android"/>
   </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.5/windows.zip">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/windows.zip">
     <img src="https://img.shields.io/badge/Download%20for-Windows-0078D6?style=for-the-badge&logo=windows" alt="Windows"/>
   </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.5/linux.tar.gz">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/linux.tar.gz">
     <img src="https://img.shields.io/badge/Download%20for-Linux-FCC624?style=for-the-badge&logo=linux" alt="Linux"/>
   </a>
 </div>
@@ -273,9 +326,14 @@ Cette approche garantit une traçabilité absolue et ancre la communication dire
 ### ✨ Fonctionnalités Clés
 
 -   **⚡ Communication Temps Réel** : Architecture basée sur un serveur **WebSocket (Node.js)** pour des échanges full-duplex instantanés.
--   **🔒 Confidentialité & Cryptage Absolu** : La messagerie est **100% privée**. Tous les messages et fichiers sont **entièrement cryptés**, que ce soit durant leur transit ou lors de leur stockage sur le serveur, garantissant une sécurité maximale.
+-   **🔒 Confidentialité & Chiffrement Absolu** : La messagerie est **100% privée**. Tous les messages et fichiers sont **chiffrés au repos sur le serveur** avec **AES-256-GCM**. Les communications transitent via **HTTPS** et **WSS (WebSocket Secure)**, garantissant une sécurité maximale de bout en bout.
+-   **⏱️ Rétention des Messages Optimisée** : Les messages sont conservés 15 jours sur le serveur et 3 mois sur le client, avec option de suppression automatique après 24h pour une confidentialité maximale. Nettoyage quotidien à minuit pour limiter la charge serveur et optimiser les coûts de stockage.
+-   **📱 Connexion Desktop ou Mobile** : Basculez entre vos appareils (desktop ou mobile) avec gestion automatique des sessions par le système d'authentification.
+-   **🔄 Reconnexion Intelligente** : Reconnexion automatique en cas de perte de réseau, avec validation 2FA si nécessaire pour garantir la sécurité de votre session.
 -   **👥 Canaux de Discussion Privés** : Créez des canaux cloisonnés pour des équipes, projets ou sujets spécifiques, accessibles uniquement aux membres autorisés.
--   **🎤 Messagerie Audio Séquentielle** : Enregistrez et envoyez des clips audio cryptés pour créer un fil de conversation vocal fluide.
+-   **🎤 Messagerie Audio Séquentielle** : Enregistrez et envoyez des clips audio chiffrés pour créer un fil de conversation vocal fluide.
+-   **📎 Partage de Fichiers Complet** : Partagez documents, images, vidéos et fichiers audio chiffrés (jusqu'à 10 fichiers par message, 10 Mo par fichier), directement dans vos conversations contextuelles.
+-   **📌 Gestion Intelligente des Fichiers** : Les fichiers sont conservés 15 jours sur le serveur, ou 3 mois s'ils sont épinglés. Chaque épinglage réinitialise le compteur à 3 mois, permettant de conserver uniquement les fichiers importants et d'optimiser le stockage serveur.
 -   **🧩 Modularité & Intégration** : Conçu comme un module autonome pouvant être intégré comme service via son API.
 -   **💪 Backend Robuste** : Un backend en **PHP 8.4 / PostgreSQL** assure la persistance des données, la gestion des utilisateurs et des droits.
 -   **🔗 API Contextuelle** : Créez et liez dynamiquement des conversations à des identifiants d'objets externes de manière sécurisée.
@@ -295,6 +353,51 @@ Cette approche garantit une traçabilité absolue et ancre la communication dire
 </p>
 
 ---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│               Applications Clientes                     │
+│         Flutter (Android, Windows, Linux)               │
+│                                                         │
+│  • Messagerie contextuelle                             │
+│  • Partage de fichiers chiffrés                        │
+│  • Messagerie audio                                    │
+└────────────┬─────────────────────┬──────────────────────┘
+             │                     │
+             │ HTTPS               │ WSS (WebSocket Secure)
+             │                     │
+             ↓                     ↓
+┌──────────────────────┐  ┌──────────────────────────────┐
+│   Serveur Backend    │  │   Serveur Temps Réel         │
+│   PHP 8.4 + Nginx    │  │   WebSocket Node.js          │
+│                      │  │                              │
+│  • Authentification  │  │  • Messagerie instantanée    │
+│  • 2FA par email     │  │  • Gestion des connexions    │
+│  • Logique métier    │  │  • Heartbeat (30s)           │
+│  • AES-256-GCM       │←─│  • Support multi-device      │
+└──────────┬───────────┘  └──────────────────────────────┘
+           │
+           │ Stockage chiffré
+           ↓
+┌──────────────────────────────────────────────────────────┐
+│              Base de données PostgreSQL                  │
+│                                                          │
+│  • Messages chiffrés (15 jours serveur / 3 mois client) │
+│  • Rétention intelligente des fichiers (épinglage)      │
+│  • Gestion des utilisateurs & permissions               │
+└──────────────────────────────────────────────────────────┘
+```
+
+**Fonctionnement :**
+1. Le **Client** se connecte via HTTPS sécurisé pour les données et WSS pour la messagerie temps réel
+2. Le **Serveur WebSocket** gère la communication bidirectionnelle instantanée
+3. Le **Backend** gère l'authentification (2FA), le chiffrement (AES-256-GCM) et la logique métier
+4. La **Base de données** stocke les données chiffrées avec des politiques de rétention intelligentes
+
+---
+
 ## 💻 Plateformes supportées
 
 | Plateforme | Statut                       |
