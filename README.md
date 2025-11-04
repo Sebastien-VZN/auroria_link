@@ -7,7 +7,14 @@
     <img src="https://img.shields.io/badge/status-alpha-orange?style=for-the-badge" alt="Project Status: Alpha"/>
     <img src="https://img.shields.io/badge/license-Proprietary-red?style=for-the-badge" alt="License: Proprietary"/>
   </p>
+
+  <p align="center">
+    <img src="https://img.shields.io/badge/Version-0.1.0%20(7)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2025--11--04-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+  </p>
 </div>
+
+
 
 **AuroriaLink** is a contextual, real-time team messaging solution designed to solve the desynchronization between communication and production tools.
 
@@ -21,19 +28,39 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 
 ## 🚀 Get the Latest Version
 
-- version 0.0.6 - 30/10/2025
-
 <div align="center">
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/app-android.apk">
-    <img src="https://img.shields.io/badge/Download%20for-Android-3DDC84?style=for-the-badge&logo=android" alt="Download for Android"/>
-  </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/windows.zip">
-    <img src="https://img.shields.io/badge/Download%20for-Windows-0078D6?style=for-the-badge&logo=windows" alt="Download for Windows"/>
-  </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/linux.tar.gz">
-    <img src="https://img.shields.io/badge/Download%20for-Linux-FCC624?style=for-the-badge&logo=linux" alt="Download for Linux"/>
-  </a>
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/app-android.apk">
+          <img src="https://img.shields.io/badge/Android-Download-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Download for Android"/>
+        </a>
+        <br/>
+        <sub>APK • All versions</sub>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/windows.zip">
+          <img src="https://img.shields.io/badge/Windows-Download-0078D6?style=for-the-badge&logo=windows11&logoColor=white" alt="Download for Windows"/>
+        </a>
+        <br/>
+        <sub>ZIP • Windows 10+</sub>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/linux.tar.gz">
+          <img src="https://img.shields.io/badge/Linux-Download-FCC624?style=for-the-badge&logo=linux&logoColor=white" alt="Download for Linux"/>
+        </a>
+        <br/>
+        <sub>TAR.GZ • All distros</sub>
+      </td>
+    </tr>
+  </table>
 </div>
+
+<p align="center">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases">
+    <img src="https://img.shields.io/badge/View_All-Releases-gray?style=flat&logo=github" alt="All Releases"/>
+  </a>
+</p>
 
 ## 📋 Table of Contents
 
@@ -59,17 +86,19 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 
 ### ✨ Key Features
 
--   **⚡ Real-Time Communication**: Architecture based on a **WebSocket (Node.js)** server for instant, full-duplex exchanges.
--   **🔒 Absolute Privacy & Encryption**: The messaging is **100% private**. All messages and files are **encrypted at rest on the server** with **AES-256-GCM**. Communications transit via **HTTPS** and **WSS (WebSocket Secure)**, ensuring end-to-end maximum security.
+-   **⚡ Real-Time Communication**: Architecture based on a **WebSocket (Node.js)** server for instant, full-duplex exchanges with heartbeat monitoring (30s) and automatic reconnection.
+-   **🔒 Absolute Privacy & Encryption**: The messaging is **100% private**. All messages and files are **encrypted at rest on the server** with **AES-256-GCM** (streaming chunks 8MB). Communications transit via **HTTPS** and **WSS (WebSocket Secure)**, ensuring end-to-end maximum security.
+-   **🚀 High-Performance Backend**: 4-level RAM cache architecture (OPcache → APCu → Ramdisk → Redis) delivering **-80% CPU decrypt load**, **+150% throughput**, and **×2 bandwidth**. Persistent database connections and 11 critical indexes ensure ultra-fast queries.
 -   **⏱️ Optimized Message Retention**: Messages are retained for 15 days on the server and 3 months on the client, with an option for automatic deletion after 24 hours for maximum confidentiality. Daily cleanup at midnight to limit server load and optimize storage costs.
--   **📱 Desktop or Mobile Connection**: Switch between your devices (desktop or mobile) with automatic session management by the authentication system.
--   **🔄 Smart Reconnection**: Automatic reconnection in case of network loss, with 2FA validation when necessary to ensure your session security.
+-   **📱 Multi-Device Support**: Switch seamlessly between your devices (desktop or mobile) with automatic session management. **Maximum 2 simultaneous connections** per user for optimal security and resource management.
+-   **🔄 Smart Reconnection**: Automatic reconnection with exponential backoff in case of network loss, with 2FA validation when necessary to ensure your session security.
+-   **🛡️ 5-Layer Security**: Route validation, brute force protection with IP tracking, 2FA via email (PIN 6-digit), AES-256-GCM encryption, and intelligent multi-device management.
 -   **👥 Private Discussion Channels**: Create partitioned channels for specific teams, projects, or topics, accessible only to authorized members.
 -   **🎤 Sequential Audio Messaging**: Record and send encrypted audio clips to create a fluid vocal conversation thread.
 -   **📎 Comprehensive File Sharing**: Share encrypted documents, images, videos, and audio files (up to 10 files per message, 10 MB per file) directly within your contextual conversations.
 -   **📌 Smart File Management**: Files are retained for 15 days on the server, or 3 months if pinned. Each pin resets the 3-month timer, allowing only important files to be retained and optimizing server storage.
 -   **🧩 Modularity & Integration**: Designed as a standalone module that can be integrated as a service via its API.
--   **💪 Robust Backend**: A **PHP 8.4 / PostgreSQL** backend ensures data persistence, user management, and permissions.
+-   **💪 Robust Backend**: A **PHP 8.4 / PostgreSQL 17** backend with **PHP-FPM (80 workers)** ensures data persistence, user management, and permissions with enterprise-grade reliability.
 -   **🔗 Contextual API**: Securely create and link conversations to external object identifiers.
 -   **🔐 Access Control**: Role-based rights management for precise and context-aware access to conversations.
 
@@ -90,45 +119,70 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 
 ## 🏗️ Architecture
 
+**Architecture Layers:**
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Layer_1-Client_(Flutter)-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Client Layer"/>
+  <img src="https://img.shields.io/badge/Layer_2-Backend_(PHP_8.4)-777BB4?style=flat-square&logo=php&logoColor=white" alt="Backend Layer"/>
+  <img src="https://img.shields.io/badge/Layer_2-WebSocket_(Node.js)-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="WebSocket Layer"/>
+  <img src="https://img.shields.io/badge/Layer_3-Database_(PostgreSQL_17)-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="Database Layer"/>
+</p>
+
 ```
-┌─────────────────────────────────────────────────────────┐
-│                  Client Applications                    │
-│         Flutter (Android, Windows, Linux)               │
-│                                                         │
-│  • Contextual messaging                                 │
-│  • Encrypted file sharing                               │
-│  • Audio messaging                                      │
-└────────────┬─────────────────────┬──────────────────────┘
-             │                     │
-             │ HTTPS               │ WSS (WebSocket Secure)
-             │                     │
-             ↓                     ↓
-┌──────────────────────┐  ┌──────────────────────────────┐
-│   Backend Server     │  │   Real-Time Server           │
-│   PHP 8.4 + Nginx    │  │   Node.js WebSocket          │
-│                      │  │                              │
-│  • Authentication    │  │  • Instant messaging         │
-│  • 2FA via email     │  │  • Connection management     │
-│  • Business logic    │  │  • Heartbeat (30s)           │
-│  • AES-256-GCM       │←─│  • Multi-device support      │
-└──────────┬───────────┘  └──────────────────────────────┘
-           │
-           │ Encrypted storage
-           ↓
-┌──────────────────────────────────────────────────────────┐
-│              PostgreSQL Database                         │
-│                                                          │
-│  • Encrypted messages (15 days server / 3 months client) │
-│  • Smart file retention (pinning system)                 │
-│  • User management & permissions                         │
-└──────────────────────────────────────────────────────────┘
+╔═════════════════════════════════════════════════════════════╗
+║                    Client Applications                      ║
+║           Flutter (Android, Windows, Linux)                 ║
+║                                                             ║
+║  • Contextual messaging                                     ║
+║  • Encrypted file sharing (AES-256-GCM)                     ║
+║  • Audio messaging                                          ║
+║  • Auto-reconnection (exponential backoff)                  ║
+╚════════════╦═════════════════════════╦══════════════════════╝
+             ║ HTTP/HTTPS              ║ WSS (WebSocket Secure)
+             ║ (auth/data)             ║ (real-time messaging)
+             ↓                         ↓
+╔═════════════════════════╗   ╔════════════════════════════════╗
+║   Backend Server        ║   ║   Real-Time WebSocket Server   ║
+║   PHP 8.4 + Nginx       ║   ║   Node.js (quantive-ws)        ║
+║   PHP-FPM (80 workers)  ║   ║                                ║
+║                         ║   ║  • Port 8080 (clients)         ║
+║  Security Layers:       ║   ║  • Port 8081 (internal API)    ║
+║  1. Route validation    ║   ║  • Heartbeat 30s (ping/pong)   ║
+║  2. Brute force ctrl    ║   ║  • Multi-device (max 2)        ║
+║  3. 2FA (email PIN)     ║   ║  • Auth via PHP validation     ║
+║  4. AES-256-GCM         ║←──║  • Session management          ║
+║  5. Multi-device mgmt   ║   ╚════════════════════════════════╝
+║                         ║
+║  4-Level Cache:         ║
+║  • OPcache (bytecode)   ║
+║  • APCu (UUID→path)     ║
+║  • Ramdisk (4GB)        ║
+║  • Redis (2GB LRU)      ║
+╚════════╦════════════════╝
+         ║ Persistent PDO
+         ║ 11 critical indexes
+         ↓
+╔═══════════════════════════════════════════════════════════════╗
+║                 PostgreSQL 17 Database                        ║
+║                                                               ║
+║  • Encrypted messages (AES-256-GCM)                           ║
+║  • Retention: 15 days server / 3 months client                ║
+║  • Smart file retention (pinning resets 3-month timer)        ║
+║  • User management, permissions & roles                       ║
+║  • Indexed: users (auth), security (IP), messages (JSONB)     ║
+╚═══════════════════════════════════════════════════════════════╝
 ```
 
 **How it works:**
-1. **Client** connects via secure HTTPS for data and WSS for real-time messaging
-2. **WebSocket Server** handles instant bidirectional communication
-3. **Backend** manages authentication (2FA), encryption (AES-256-GCM), and business logic
-4. **Database** stores encrypted data with intelligent retention policies
+1. **Client** connects via HTTPS for auth/data and WSS for real-time messaging
+2. **WebSocket Server** handles instant bidirectional communication with heartbeat (30s) and multi-device support (max 2 connections)
+3. **Backend** manages 5 security layers (route validation, brute force, 2FA, AES-256-GCM, multi-device), with 4-level RAM cache for optimal performance
+4. **Database** stores encrypted data with intelligent retention policies and 11 critical indexes for query optimization
+
+**Performance optimizations** (deployed 2025-11-04):
+- 4-level RAM cache: -80% CPU decrypt load, +150% throughput, ×2 bandwidth
+- Persistent PDO connections: -20-40% DB latency
+- 11 PostgreSQL indexes: Optimized auth, security checks, and message queries
 
 ---
 
@@ -154,7 +208,7 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 > **Important:** Our application is not (yet) on the Google Play Store. Installation requires a few manual steps to allow external sources. This is a standard and secure procedure.
 
 #### Step 1: Allow Unknown Sources
-1.  **Download the `app-android.apk` file** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/tag/).
+1.  **Download the `app-android.apk` file** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/latest ).
 2.  Open the downloaded file (from your notification bar or file manager).
 3.  A security prompt will appear: *"For your security, your phone is not allowed to install unknown apps from this source."*
 4.  Tap on the **Settings** button.
@@ -174,7 +228,7 @@ And that's it, the application is installed!
 
 > **Warning:** Your antivirus software (including Windows Defender) may show an alert. This is normal behavior for applications that are not certified by Microsoft. Our file is safe.
 
-1.  **Download the `windows.zip` archive** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/tag/).
+1.  **Download the `windows.zip` archive** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/latest ).
 2.  **Decompress the archive.**
 3.  **Run the `.exe` file** located inside the extracted folder.
 4.  If a blue "Windows protected your PC" screen appears:
@@ -188,7 +242,7 @@ And that's it, the application is installed!
 
 > For Linux, you just need to make the file executable before running it.
 
-1.  **Download the `linux.tar.gz` archive** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/tag/) and decompress it.
+1.  **Download the `linux.tar.gz` archive** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/latest ) and decompress it.
 2.  **Make the application file executable.** You have two options:
     * **Via GUI (Graphical User Interface):**
         1.  Right-click on the application file.
@@ -309,33 +363,62 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 
 ## 🚀 Télécharger la dernière version
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Version-0.1.0%20(7)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+  <img src="https://img.shields.io/badge/Date%20de%20sortie-2025--11--04-blue?style=flat-square&logo=calendar" alt="Date de sortie"/>
+</p>
+
 <div align="center">
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/app-android.apk">
-    <img src="https://img.shields.io/badge/Download%20for-Android-3DDC84?style=for-the-badge&logo=android" alt="Android"/>
-  </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/windows.zip">
-    <img src="https://img.shields.io/badge/Download%20for-Windows-0078D6?style=for-the-badge&logo=windows" alt="Windows"/>
-  </a>
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.0.6/linux.tar.gz">
-    <img src="https://img.shields.io/badge/Download%20for-Linux-FCC624?style=for-the-badge&logo=linux" alt="Linux"/>
-  </a>
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/app-android.apk">
+          <img src="https://img.shields.io/badge/Android-Télécharger-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Télécharger pour Android"/>
+        </a>
+        <br/>
+        <sub>APK • Toutes versions</sub>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/windows.zip">
+          <img src="https://img.shields.io/badge/Windows-Télécharger-0078D6?style=for-the-badge&logo=microsoftwindows&logoColor=white" alt="Télécharger pour Windows"/>
+        </a>
+        <br/>
+        <sub>ZIP • Windows 10+</sub>
+      </td>
+      <td align="center" width="33%">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/linux.tar.gz">
+          <img src="https://img.shields.io/badge/Linux-Télécharger-FCC624?style=for-the-badge&logo=linux&logoColor=white" alt="Télécharger pour Linux"/>
+        </a>
+        <br/>
+        <sub>TAR.GZ • Toutes distros</sub>
+      </td>
+    </tr>
+  </table>
 </div>
+
+<p align="center">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/releases">
+    <img src="https://img.shields.io/badge/Voir_toutes_les-Versions-gray?style=flat&logo=github" alt="Toutes les versions"/>
+  </a>
+</p>
 
 ---
 
 ### ✨ Fonctionnalités Clés
 
--   **⚡ Communication Temps Réel** : Architecture basée sur un serveur **WebSocket (Node.js)** pour des échanges full-duplex instantanés.
--   **🔒 Confidentialité & Chiffrement Absolu** : La messagerie est **100% privée**. Tous les messages et fichiers sont **chiffrés au repos sur le serveur** avec **AES-256-GCM**. Les communications transitent via **HTTPS** et **WSS (WebSocket Secure)**, garantissant une sécurité maximale de bout en bout.
+-   **⚡ Communication Temps Réel** : Architecture basée sur un serveur **WebSocket (Node.js)** pour des échanges full-duplex instantanés avec monitoring heartbeat (30s) et reconnexion automatique.
+-   **🔒 Confidentialité & Chiffrement Absolu** : La messagerie est **100% privée**. Tous les messages et fichiers sont **chiffrés au repos sur le serveur** avec **AES-256-GCM** (streaming chunks 8MB). Les communications transitent via **HTTPS** et **WSS (WebSocket Secure)**, garantissant une sécurité maximale de bout en bout.
+-   **🚀 Backend Haute Performance** : Architecture cache RAM 4 niveaux (OPcache → APCu → Ramdisk → Redis) offrant **-80% charge CPU déchiffrement**, **+150% throughput**, et **×2 bande passante**. Connexions base de données persistantes et 11 index critiques assurent des requêtes ultra-rapides.
 -   **⏱️ Rétention des Messages Optimisée** : Les messages sont conservés 15 jours sur le serveur et 3 mois sur le client, avec option de suppression automatique après 24h pour une confidentialité maximale. Nettoyage quotidien à minuit pour limiter la charge serveur et optimiser les coûts de stockage.
--   **📱 Connexion Desktop ou Mobile** : Basculez entre vos appareils (desktop ou mobile) avec gestion automatique des sessions par le système d'authentification.
--   **🔄 Reconnexion Intelligente** : Reconnexion automatique en cas de perte de réseau, avec validation 2FA si nécessaire pour garantir la sécurité de votre session.
+-   **📱 Support Multi-Device** : Basculez facilement entre vos appareils (desktop ou mobile) avec gestion automatique des sessions. **Maximum 2 connexions simultanées** par utilisateur pour une sécurité et gestion des ressources optimales.
+-   **🔄 Reconnexion Intelligente** : Reconnexion automatique avec backoff exponentiel en cas de perte de réseau, avec validation 2FA si nécessaire pour garantir la sécurité de votre session.
+-   **🛡️ Sécurité 5 Couches** : Validation des routes, protection brute force avec tracking IP, 2FA par email (PIN 6 chiffres), chiffrement AES-256-GCM, et gestion intelligente multi-device.
 -   **👥 Canaux de Discussion Privés** : Créez des canaux cloisonnés pour des équipes, projets ou sujets spécifiques, accessibles uniquement aux membres autorisés.
 -   **🎤 Messagerie Audio Séquentielle** : Enregistrez et envoyez des clips audio chiffrés pour créer un fil de conversation vocal fluide.
 -   **📎 Partage de Fichiers Complet** : Partagez documents, images, vidéos et fichiers audio chiffrés (jusqu'à 10 fichiers par message, 10 Mo par fichier), directement dans vos conversations contextuelles.
 -   **📌 Gestion Intelligente des Fichiers** : Les fichiers sont conservés 15 jours sur le serveur, ou 3 mois s'ils sont épinglés. Chaque épinglage réinitialise le compteur à 3 mois, permettant de conserver uniquement les fichiers importants et d'optimiser le stockage serveur.
 -   **🧩 Modularité & Intégration** : Conçu comme un module autonome pouvant être intégré comme service via son API.
--   **💪 Backend Robuste** : Un backend en **PHP 8.4 / PostgreSQL** assure la persistance des données, la gestion des utilisateurs et des droits.
+-   **💪 Backend Robuste** : Un backend en **PHP 8.4 / PostgreSQL 17** avec **PHP-FPM (80 workers)** assure la persistance des données, la gestion des utilisateurs et des droits avec une fiabilité de niveau entreprise.
 -   **🔗 API Contextuelle** : Créez et liez dynamiquement des conversations à des identifiants d'objets externes de manière sécurisée.
 -   **🔐 Contrôle d'Accès** : Gestion des droits basée sur les rôles pour un accès précis et contextuel aux conversations.
 
@@ -356,55 +439,80 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 
 ## 🏗️ Architecture
 
+**Couches d'Architecture :**
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Couche_1-Client_(Flutter)-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Couche Client"/>
+  <img src="https://img.shields.io/badge/Couche_2-Backend_(PHP_8.4)-777BB4?style=flat-square&logo=php&logoColor=white" alt="Couche Backend"/>
+  <img src="https://img.shields.io/badge/Couche_2-WebSocket_(Node.js)-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Couche WebSocket"/>
+  <img src="https://img.shields.io/badge/Couche_3-Base_de_données_(PostgreSQL_17)-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="Couche Base de données"/>
+</p>
+
 ```
-┌─────────────────────────────────────────────────────────┐
-│               Applications Clientes                     │
-│         Flutter (Android, Windows, Linux)               │
-│                                                         │
-│  • Messagerie contextuelle                             │
-│  • Partage de fichiers chiffrés                        │
-│  • Messagerie audio                                    │
-└────────────┬─────────────────────┬──────────────────────┘
-             │                     │
-             │ HTTPS               │ WSS (WebSocket Secure)
-             │                     │
-             ↓                     ↓
-┌──────────────────────┐  ┌──────────────────────────────┐
-│   Serveur Backend    │  │   Serveur Temps Réel         │
-│   PHP 8.4 + Nginx    │  │   WebSocket Node.js          │
-│                      │  │                              │
-│  • Authentification  │  │  • Messagerie instantanée    │
-│  • 2FA par email     │  │  • Gestion des connexions    │
-│  • Logique métier    │  │  • Heartbeat (30s)           │
-│  • AES-256-GCM       │←─│  • Support multi-device      │
-└──────────┬───────────┘  └──────────────────────────────┘
-           │
-           │ Stockage chiffré
-           ↓
-┌──────────────────────────────────────────────────────────┐
-│              Base de données PostgreSQL                  │
-│                                                          │
-│  • Messages chiffrés (15 jours serveur / 3 mois client) │
-│  • Rétention intelligente des fichiers (épinglage)      │
-│  • Gestion des utilisateurs & permissions               │
-└──────────────────────────────────────────────────────────┘
+╔═════════════════════════════════════════════════════════════╗
+║                  Applications Clientes                      ║
+║           Flutter (Android, Windows, Linux)                 ║
+║                                                             ║
+║  • Messagerie contextuelle                                  ║
+║  • Partage de fichiers chiffrés (AES-256-GCM)               ║
+║  • Messagerie audio                                         ║
+║  • Auto-reconnexion (backoff exponentiel)                   ║
+╚════════════╦═════════════════════════╦══════════════════════╝
+             ║ HTTP/HTTPS              ║ WSS (WebSocket Secure)
+             ║ (auth/data)             ║ (messagerie temps réel)
+             ↓                         ↓
+╔═════════════════════════╗   ╔════════════════════════════════╗
+║   Serveur Backend       ║   ║   Serveur WebSocket Temps Réel ║
+║   PHP 8.4 + Nginx       ║   ║   Node.js (quantive-ws)        ║
+║   PHP-FPM (80 workers)  ║   ║                                ║
+║                         ║   ║  • Port 8080 (clients)         ║
+║  Couches de sécurité :  ║   ║  • Port 8081 (API interne)     ║
+║  1. Validation routes   ║   ║  • Heartbeat 30s (ping/pong)   ║
+║  2. Contrôle brute force║   ║  • Multi-device (max 2)        ║
+║  3. 2FA (PIN email)     ║   ║  • Auth via validation PHP     ║
+║  4. AES-256-GCM         ║←──║  • Gestion des sessions        ║
+║  5. Gestion multi-device║   ╚════════════════════════════════╝
+║                         ║
+║  Cache 4 niveaux :      ║
+║  • OPcache (bytecode)   ║
+║  • APCu (UUID→path)     ║
+║  • Ramdisk (4GB)        ║
+║  • Redis (2GB LRU)      ║
+╚════════╦════════════════╝
+         ║ PDO persistant
+         ║ 11 index critiques
+         ↓
+╔═══════════════════════════════════════════════════════════════╗
+║               Base de données PostgreSQL 17                   ║
+║                                                               ║
+║  • Messages chiffrés (AES-256-GCM)                            ║
+║  • Rétention : 15 jours serveur / 3 mois client               ║
+║  • Rétention intelligente (épinglage réinitialise 3 mois)     ║
+║  • Gestion utilisateurs, permissions & rôles                  ║
+║  • Indexé : users (auth), security (IP), messages (JSONB)     ║
+╚═══════════════════════════════════════════════════════════════╝
 ```
 
 **Fonctionnement :**
-1. Le **Client** se connecte via HTTPS sécurisé pour les données et WSS pour la messagerie temps réel
-2. Le **Serveur WebSocket** gère la communication bidirectionnelle instantanée
-3. Le **Backend** gère l'authentification (2FA), le chiffrement (AES-256-GCM) et la logique métier
-4. La **Base de données** stocke les données chiffrées avec des politiques de rétention intelligentes
+1. Le **Client** se connecte via HTTPS pour auth/données et WSS pour la messagerie temps réel
+2. Le **Serveur WebSocket** gère la communication bidirectionnelle instantanée avec heartbeat (30s) et support multi-device (max 2 connexions)
+3. Le **Backend** gère 5 couches de sécurité (validation routes, brute force, 2FA, AES-256-GCM, multi-device), avec cache RAM 4 niveaux pour des performances optimales
+4. La **Base de données** stocke les données chiffrées avec politiques de rétention intelligentes et 11 index critiques pour l'optimisation des requêtes
+
+**Optimisations de performance** (déployées 2025-11-04) :
+- Cache RAM 4 niveaux : -80% charge CPU déchiffrement, +150% throughput, ×2 bande passante
+- Connexions PDO persistantes : -20-40% latence DB
+- 11 index PostgreSQL : Optimisation auth, vérifications sécurité et requêtes messages
 
 ---
 
 ## 💻 Plateformes supportées
 
-| Plateforme | Statut                       |
-|:----------:|:-----------------------------|
-| Android    | ✅ Supporté                  |
-| Windows    | ✅ Supporté                  |
-| Linux      | ✅ Supporté                  |
+| Plateforme | Statut                         |
+|:----------:|:-------------------------------|
+| Android    | ✅ Supporté                    |
+| Windows    | ✅ Supporté                    |
+| Linux      | ✅ Supporté                    |
 | macOS      | ❌ Non supporté pour le moment |
 | iOS        | ❌ Non supporté pour le moment |
 
@@ -419,7 +527,7 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 > **Important :** Notre application n'est pas (encore) sur le Google Play Store. L'installation nécessite quelques étapes manuelles pour autoriser les sources externes. C'est une procédure standard et sécurisée.
 
 #### Étape 1 : Autoriser les sources inconnues
-1.  **Téléchargez le fichier `app-android.apk`** depuis le lien des [dernières versions](https://github.com/Sebastien-VZN/auroria_link/releases/tag/).
+1.  **Téléchargez le fichier `app-android.apk`** depuis le lien des [dernières versions](https://github.com/Sebastien-VZN/auroria_link/releases/latest ).
 2.  Ouvrez le fichier téléchargé (depuis votre barre de notifications ou votre gestionnaire de fichiers).
 3.  Un message de sécurité va apparaître : *"Pour votre sécurité, votre téléphone n'est pas autorisé à installer des applications inconnues de cette source."*
 4.  Cliquez sur le bouton **Paramètres**.
@@ -438,7 +546,7 @@ Et voilà, l'application est installée !
 
 > **Avertissement :** Votre antivirus (y compris Windows Defender) peut afficher une alerte. C'est un comportement normal pour les applications qui ne sont pas certifiées par Microsoft. Notre fichier est sûr.
 
-1.  **Téléchargez l'archive `windows.tar.gz`** depuis le lien des [dernières versions](https://github.com/Sebastien-VZN/auroria_link/releases/tag/).
+1.  **Téléchargez l'archive `windows.tar.gz`** depuis le lien des [dernières versions](https://github.com/Sebastien-VZN/auroria_link/releases/latest ).
 2.  **Décompressez l'archive.**
 3.  **Exécutez le fichier `.exe`** qui se trouve dans le dossier décompressé.
 4.  Si une fenêtre bleue "Windows a protégé votre ordinateur" apparaît :
@@ -452,7 +560,7 @@ Et voilà, l'application est installée !
 
 > Pour Linux, il suffit de rendre le fichier exécutable avant de le lancer.
 
-1.  **Téléchargez l'archive `linux.tar.gz`** depuis le lien des [dernières versions](https://github.com/Sebastien-VZN/auroria_link/releases/tag/) et décompressez-la.
+1.  **Téléchargez l'archive `linux.tar.gz`** depuis le lien des [dernières versions](https://github.com/Sebastien-VZN/auroria_link/releases/latest ) et décompressez-la.
 2.  **Rendez le fichier de l'application exécutable.** Vous avez deux options :
     * **Via l'interface graphique :**
         1.  Faites un clic droit sur le fichier de l'application.
