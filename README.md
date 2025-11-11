@@ -9,8 +9,8 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Version-0.1.0%20(7)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-    <img src="https://img.shields.io/badge/Release%20Date-2025--11--04-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+    <img src="https://img.shields.io/badge/Version-0.1.1%20(8)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2025--11--12-blue?style=flat-square&logo=calendar" alt="Release Date"/>
   </p>
 </div>
 
@@ -32,21 +32,21 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
   <table>
     <tr>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/app-android.apk">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.1.1/app-android.apk">
           <img src="https://img.shields.io/badge/Android-Download-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Download for Android"/>
         </a>
         <br/>
         <sub>APK • All versions</sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/windows.zip">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.1.1/windows.zip">
           <img src="https://img.shields.io/badge/Windows-Download-0078D6?style=for-the-badge&logo=windows11&logoColor=white" alt="Download for Windows"/>
         </a>
         <br/>
         <sub>ZIP • Windows 10+</sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/linux.tar.gz">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.1.1/linux.tar.gz">
           <img src="https://img.shields.io/badge/Linux-Download-FCC624?style=for-the-badge&logo=linux&logoColor=white" alt="Download for Linux"/>
         </a>
         <br/>
@@ -372,21 +372,21 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
   <table>
     <tr>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/app-android.apk">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.1.1/app-android.apk">
           <img src="https://img.shields.io/badge/Android-Télécharger-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Télécharger pour Android"/>
         </a>
         <br/>
         <sub>APK • Toutes versions</sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/windows.zip">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.1.1/windows.zip">
           <img src="https://img.shields.io/badge/Windows-Télécharger-0078D6?style=for-the-badge&logo=microsoftwindows&logoColor=white" alt="Télécharger pour Windows"/>
         </a>
         <br/>
         <sub>ZIP • Windows 10+</sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha/linux.tar.gz">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.1.1/linux.tar.gz">
           <img src="https://img.shields.io/badge/Linux-Télécharger-FCC624?style=for-the-badge&logo=linux&logoColor=white" alt="Télécharger pour Linux"/>
         </a>
         <br/>
