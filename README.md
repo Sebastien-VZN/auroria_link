@@ -305,7 +305,7 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
           <img src="https://img.shields.io/badge/Linux-Télécharger-a569bd?style=for-the-badge&logo=linux&logoColor=white" alt="Télécharger pour Linux"/>
         </a>
         <br/>
-        <sub>TAR.GZ • Toutes distros</sub>
+        <sub>AppImage Linux • Toutes distros</sub>
       </td>
     </tr>
   </table>

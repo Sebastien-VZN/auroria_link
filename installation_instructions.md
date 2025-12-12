@@ -41,9 +41,30 @@ And that's it, the application is installed!
 
 ## 🐧 Linux Installation
 
-> For Linux, you just need to make the file executable before running it.
+> **Note:** Due to the diverse nature of Linux distributions, some dependencies may be missing or inconsistent, which can cause instability with the binary build. If you encounter any issues with the binary, we recommend using the **AppImage** version for better compatibility across all distributions.
 
-> **Note:** Due to the diverse nature of Linux distributions, some dependencies may be missing or inconsistent, which can cause instability. An **AppImage** build is planned for future releases to provide better compatibility across all distributions.
+### Option 1: AppImage (Recommended)
+
+The AppImage is a portable, self-contained package that works on most Linux distributions without installation.
+
+1.  **Download the `.AppImage` file** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/latest).
+2.  **Make the AppImage executable:**
+    * **Via GUI (Graphical User Interface):**
+        1.  Right-click on the `.AppImage` file.
+        2.  Go to **Properties** → **Permissions** tab.
+        3.  Check the box **"Allow executing file as program"**.
+    * **Via Terminal:**
+        ```bash
+        chmod +x AuroriaLink-*.AppImage
+        ```
+3.  **Launch the application** by double-clicking the `.AppImage` file or by running it from the terminal:
+    ```bash
+    ./AuroriaLink-*.AppImage
+    ```
+
+### Option 2: Binary Archive
+
+If you prefer the traditional binary approach:
 
 1.  **Download the `linux.tar.gz` archive** from the [latest release](https://github.com/Sebastien-VZN/auroria_link/releases/latest) and decompress it.
 2.  **Make the application file executable.** You have two options:
@@ -107,9 +128,30 @@ Et voilà, l'application est installée !
 
 ## 🐧 Installation sur Linux
 
-> Pour Linux, il suffit de rendre le fichier exécutable avant de le lancer.
+> **Note :** En raison de la diversité des distributions Linux, certaines dépendances peuvent être manquantes ou incohérentes, ce qui peut causer des instabilités avec le binaire. Si vous rencontrez des problèmes avec le binaire, nous recommandons d'utiliser la version **AppImage** pour une meilleure compatibilité sur toutes les distributions.
 
-> **Note :** En raison de la diversité des distributions Linux, certaines dépendances peuvent être manquantes ou incohérentes, ce qui peut causer des instabilités. Une version **AppImage** est prévue pour les prochaines releases afin d'offrir une meilleure compatibilité sur toutes les distributions.
+### Option 1 : AppImage (Recommandée)
+
+L'AppImage est un package portable et autonome qui fonctionne sur la plupart des distributions Linux sans installation.
+
+1.  **Téléchargez le fichier `.AppImage`** depuis le lien des [dernières versions](https://github.com/Sebastien-VZN/auroria_link/releases/latest).
+2.  **Rendez l'AppImage exécutable :**
+    * **Via l'interface graphique :**
+        1.  Faites un clic droit sur le fichier `.AppImage`.
+        2.  Allez dans **Propriétés** → onglet **Permissions**.
+        3.  Cochez la case **"Autoriser l'exécution du fichier comme un programme"**.
+    * **Via le terminal :**
+        ```bash
+        chmod +x AuroriaLink-*.AppImage
+        ```
+3.  **Lancez l'application** en double-cliquant sur le fichier `.AppImage` ou en exécutant la commande suivante dans le terminal :
+    ```bash
+    ./AuroriaLink-*.AppImage
+    ```
+
+### Option 2 : Archive binaire
+
+Si vous préférez l'approche binaire traditionnelle :
 
 1.  **Téléchargez l'archive `linux.tar.gz`** depuis le lien des [dernières versions](https://github.com/Sebastien-VZN/auroria_link/releases/latest) et décompressez-la.
 2.  **Rendez le fichier de l'application exécutable.** Vous avez deux options :
