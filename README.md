@@ -41,18 +41,10 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
         <sub>ZIP • Windows 10+</sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/linux_0.5.1tar.gz">
+        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/linux_0.5.1.tar.gz">
           <img src="https://img.shields.io/badge/Linux-Download-8A6DF0?style=for-the-badge&logo=linux&logoColor=white" alt="Download for Linux"/>
         </a>
         <br/>
-        <sub>TAR.GZ • All distros</sub>
-        <br/>
-        <br/>
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/AuroriaLink-0.5.1-x86_64.AppImage">
-          <img src="https://img.shields.io/badge/Linux-Download-a569bd?style=for-the-badge&logo=linux&logoColor=white" alt="Download pour Linux"/>
-        </a>
-        <br/>
-        <sub>AppImage Linux • All distros</sub>
       </td>
     </tr>
   </table>
