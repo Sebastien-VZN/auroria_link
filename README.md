@@ -9,8 +9,8 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Version-0.5.1%20(13)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-    <img src="https://img.shields.io/badge/Release%20Date-2025--12--12-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+    <img src="https://img.shields.io/badge/Version-0.5.2%20(14)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2025--12--18-blue?style=flat-square&logo=calendar" alt="Release Date"/>
   </p>
 </div>
 
@@ -27,24 +27,25 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
   <table>
     <tr>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/app-android_0.5.apk">
-          <img src="https://img.shields.io/badge/Android-Download-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Download for Android"/>
+        <a href="INSTALL_ANDROID.md">
+          <img src="https://img.shields.io/badge/Android-Install-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Install for Android"/>
         </a>
         <br/>
-        <sub>APK • All versions</sub>
+        <sub>APK • <a href="INSTALL_ANDROID.md">Installation guide</a></sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/windows_0.5.zip">
-          <img src="https://img.shields.io/badge/Windows-Download-3A6DF0?style=for-the-badge&logo=windows11&logoColor=white" alt="Download for Windows"/>
+        <a href="INSTALL_WINDOWS.md">
+          <img src="https://img.shields.io/badge/Windows-Install-3A6DF0?style=for-the-badge&logo=windows11&logoColor=white" alt="Install for Windows"/>
         </a>
         <br/>
-        <sub>ZIP • Windows 10+</sub>
+        <sub>ZIP • <a href="INSTALL_WINDOWS.md">Installation guide</a></sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/linux_0.5.1.tar.gz">
-          <img src="https://img.shields.io/badge/Linux-Download-8A6DF0?style=for-the-badge&logo=linux&logoColor=white" alt="Download for Linux"/>
+        <a href="INSTALL_LINUX.md">
+          <img src="https://img.shields.io/badge/Linux-Install-8A6DF0?style=for-the-badge&logo=linux&logoColor=white" alt="Install for Linux"/>
         </a>
         <br/>
+        <sub>Debian 13 • <a href="INSTALL_LINUX.md">Installation guide</a></sub>
       </td>
     </tr>
   </table>
@@ -177,7 +178,11 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 
 ## 🚀 Installation
 
-For detailed installation instructions on Android, Windows, and Linux, please refer to the [**Installation Guide**](installation_instructions.md).
+Choose your platform for detailed installation instructions:
+
+- **[Android Installation Guide](INSTALL_ANDROID.md)** - APK installation for all Android versions
+- **[Windows Installation Guide](INSTALL_WINDOWS.md)** - ZIP installation for Windows 10+
+- **[Linux Installation Guide](INSTALL_LINUX.md)** - Binary installation for Debian 13
 
 ---
 
@@ -272,32 +277,25 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
   <table>
     <tr>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/app-android_0.5.apk">
-          <img src="https://img.shields.io/badge/Android-Télécharger-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Télécharger pour Android"/>
+        <a href="INSTALL_ANDROID.md">
+          <img src="https://img.shields.io/badge/Android-Installer-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Installer pour Android"/>
         </a>
         <br/>
-        <sub>APK • Toutes versions</sub>
+        <sub>APK • <a href="INSTALL_ANDROID.md">Guide d'installation</a></sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/windows_0.5.zip">
-          <img src="https://img.shields.io/badge/Windows-Télécharger-3A6DF0?style=for-the-badge&logo=microsoftwindows&logoColor=white" alt="Télécharger pour Windows"/>
+        <a href="INSTALL_WINDOWS.md">
+          <img src="https://img.shields.io/badge/Windows-Installer-3A6DF0?style=for-the-badge&logo=microsoftwindows&logoColor=white" alt="Installer pour Windows"/>
         </a>
         <br/>
-        <sub>ZIP • Windows 10+</sub>
+        <sub>ZIP • <a href="INSTALL_WINDOWS.md">Guide d'installation</a></sub>
       </td>
       <td align="center" width="33%">
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/linux_0.5.1tar.gz">
-          <img src="https://img.shields.io/badge/Linux-Télécharger-8A6DF0?style=for-the-badge&logo=linux&logoColor=white" alt="Télécharger pour Linux"/>
+        <a href="INSTALL_LINUX.md">
+          <img src="https://img.shields.io/badge/Linux-Installer-8A6DF0?style=for-the-badge&logo=linux&logoColor=white" alt="Installer pour Linux"/>
         </a>
         <br/>
-        <sub>TAR.GZ • Toutes distros</sub>
-        <br/>
-        <br/>
-        <a href="https://github.com/Sebastien-VZN/auroria_link/releases/download/alpha_0.5.1/AuroriaLink-0.5.1-x86_64.AppImage">
-          <img src="https://img.shields.io/badge/Linux-Télécharger-a569bd?style=for-the-badge&logo=linux&logoColor=white" alt="Télécharger pour Linux"/>
-        </a>
-        <br/>
-        <sub>AppImage Linux • Toutes distros</sub>
+        <sub>Debian 13 • <a href="INSTALL_LINUX.md">Guide d'installation</a></sub>
       </td>
     </tr>
   </table>
@@ -410,7 +408,11 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 
 ## 🚀 Instructions d'Installation
 
-Pour des instructions d'installation détaillées sur Android, Windows et Linux, veuillez consulter notre [**Guide d'Installation**](installation_instructions.md).
+Choisissez votre plateforme pour des instructions détaillées :
+
+- **[Guide d'Installation Android](INSTALL_ANDROID.md)** - Installation APK pour toutes les versions Android
+- **[Guide d'Installation Windows](INSTALL_WINDOWS.md)** - Installation ZIP pour Windows 10+
+- **[Guide d'Installation Linux](INSTALL_LINUX.md)** - Installation binaire pour Debian 13
 
 ---
 
