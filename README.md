@@ -269,39 +269,6 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 ## 🚀 Télécharger la dernière version
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-0.5.1%20(13)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-  <img src="https://img.shields.io/badge/Date%20de%20sortie-2025--12--12-blue?style=flat-square&logo=calendar" alt="Date de sortie"/>
-</p>
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="33%">
-        <a href="INSTALL_ANDROID.md">
-          <img src="https://img.shields.io/badge/Android-Installer-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Installer pour Android"/>
-        </a>
-        <br/>
-        <sub>APK • <a href="INSTALL_ANDROID.md">Guide d'installation</a></sub>
-      </td>
-      <td align="center" width="33%">
-        <a href="INSTALL_WINDOWS.md">
-          <img src="https://img.shields.io/badge/Windows-Installer-3A6DF0?style=for-the-badge&logo=microsoftwindows&logoColor=white" alt="Installer pour Windows"/>
-        </a>
-        <br/>
-        <sub>ZIP • <a href="INSTALL_WINDOWS.md">Guide d'installation</a></sub>
-      </td>
-      <td align="center" width="33%">
-        <a href="INSTALL_LINUX.md">
-          <img src="https://img.shields.io/badge/Linux-Installer-8A6DF0?style=for-the-badge&logo=linux&logoColor=white" alt="Installer pour Linux"/>
-        </a>
-        <br/>
-        <sub>Debian 13 • <a href="INSTALL_LINUX.md">Guide d'installation</a></sub>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<p align="center">
   <a href="https://github.com/Sebastien-VZN/auroria_link/releases">
     <img src="https://img.shields.io/badge/Voir_toutes_les-Versions-gray?style=flat&logo=github" alt="Toutes les versions"/>
   </a>
