@@ -4,17 +4,15 @@
   <p><strong>A real-time team messaging solution.</strong></p>
   
   <p>
-    <img src="https://img.shields.io/badge/status-alpha-orange?style=for-the-badge" alt="Project Status: Alpha"/>
+    <img src="https://img.shields.io/badge/status-beta-blue?style=for-the-badge" alt="Project Status: Beta"/>
     <img src="https://img.shields.io/badge/license-Proprietary-red?style=for-the-badge" alt="License: Proprietary"/>
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Version-0.5.5%20(17)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-    <img src="https://img.shields.io/badge/Release%20Date-2025--12--30-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+    <img src="https://img.shields.io/badge/Version-0.6.0%20(18)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2025--12--31-blue?style=flat-square&logo=calendar" alt="Release Date"/>
   </p>
 </div>
-
-
 
 **AuroriaLink** is a real-time team messaging platform built with Flutter, designed for seamless collaboration through group discussions and secure file sharing.
 
@@ -59,7 +57,7 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 
 ## 📋 Table of Contents
 
-- [⚠️ Project Status](#️-project-status-alpha-version)
+- [⚠️ Project Status](#️-project-status-beta-version)
 - [✨ Key Features](#-key-features)
 - [🛠️ Tech Stack](#️-tech-stack)
 - [💻 Supported Platforms](#-supported-platforms)
@@ -72,7 +70,7 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 
 ---
 
-### ⚠️ Project Status: Alpha Version
+### ⚠️ Project Status: Beta Version
 
 > This project is currently in active development. Bugs and unexpected behaviors are therefore likely. All feedback is welcome.
 
@@ -233,7 +231,7 @@ Both AuroriaLink and Axomind are built upon a **custom modular Flutter framework
 
 ## 🤝 Contributing & Feedback
 
-As an alpha version, this project thrives on community feedback. If you encounter a bug, have a feature request, or want to contribute, please feel free to open an issue on the repository.
+As an beta version, this project thrives on community feedback. If you encounter a bug, have a feature request, or want to contribute, please feel free to open an issue on the repository.
 
 ---
 
@@ -260,7 +258,7 @@ As an alpha version, this project thrives on community feedback. If you encounte
 
 Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimise les coûts serveur grâce à une gestion intelligente des ressources, tout en maintenant performance et sécurité.
 
-### ⚠️ Statut du projet : Version Alpha
+### ⚠️ Statut du projet : Version Beta
 
 > Ce projet est actuellement en phase de développement actif. Des bugs et des comportements inattendus sont donc probables. Les contributions et retours d'expérience sont les bienvenus.
 
