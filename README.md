@@ -9,8 +9,8 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Version-0.6.0%20(18)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-    <img src="https://img.shields.io/badge/Release%20Date-2025--12--31-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+    <img src="https://img.shields.io/badge/Version-0.7.0%20(19)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2026--01--17-blue?style=flat-square&logo=calendar" alt="Release Date"/>
   </p>
 </div>
 
@@ -62,6 +62,7 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 - [🛠️ Tech Stack](#️-tech-stack)
 - [💻 Supported Platforms](#-supported-platforms)
 - [🚀 Installation](#-installation)
+- [🤖 Bot API](#-bot-api)
 - [🎨 Gallery](#-gallery)
 - [🌱 Origins: Axomind & Custom Framework](#-origins-axomind--custom-framework)
 - [🤝 Contributing & Feedback](#-contributing--feedback)
@@ -181,6 +182,66 @@ Choose your platform for detailed installation instructions:
 - **[Android Installation Guide](INSTALL_ANDROID.md)** - APK installation for all Android versions
 - **[Windows Installation Guide](INSTALL_WINDOWS.md)** - ZIP installation for Windows 10+
 - **[Linux Installation Guide](INSTALL_LINUX.md)** - Binary installation for Debian 13
+
+---
+
+## 🤖 Bot API
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="API_BOT.md">
+          <img src="https://img.shields.io/badge/Bot_API-Documentation-green?style=for-the-badge&logo=robot&logoColor=white" alt="Bot API Documentation"/>
+        </a>
+        <br/>
+        <sub>Integrate automated messaging into your workflows</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+The **Bot API** allows third-party applications to send automated messages to AuroriaLink conversations. Perfect for:
+
+- **CI/CD pipelines** - Build status notifications
+- **Monitoring systems** - Real-time alerts
+- **Workflow automation** - n8n, Zapier, Make integrations
+- **Custom applications** - Your own integrations
+
+<details>
+<summary>⚡ <strong>n8n Integration Example</strong> - Connect 400+ apps to your team chat</summary>
+
+<br/>
+
+Use an **HTTP Request** node in n8n to send messages:
+
+| Setting | Value |
+|---------|-------|
+| **Method** | `POST` |
+| **URL** | `https://quantive-studio.xyz/app/bot_api.php?route=api_messenger` |
+| **Body Type** | `Form URL Encoded` |
+| **Parameters** | `key_access`: Your bot token |
+| | `type_action`: `add_message` |
+| | `content_message`: `{{$json["message"]}}` |
+
+**Use cases:**
+- GitHub webhook → New PR notification to team
+- Stripe webhook → Payment alerts
+- Monitoring → Server down alerts
+- CRM → New lead notifications
+- Calendar → Meeting reminders
+
+</details>
+
+**Quick Example (cURL):**
+```bash
+curl -X POST "https://quantive-studio.xyz/app/bot_api.php?route=api_messenger" \
+  -d "key_access=YOUR_BOT_TOKEN" \
+  -d "type_action=add_message" \
+  -d "content_message=Hello from my bot!"
+```
+
+See the **[complete Bot API documentation](API_BOT.md)** for setup instructions, code examples (Python, Node.js, PHP), and API reference.
 
 ---
 
@@ -378,6 +439,58 @@ Choisissez votre plateforme pour des instructions détaillées :
 - **[Guide d'Installation Android](INSTALL_ANDROID.md)** - Installation APK pour toutes les versions Android
 - **[Guide d'Installation Windows](INSTALL_WINDOWS.md)** - Installation ZIP pour Windows 10+
 - **[Guide d'Installation Linux](INSTALL_LINUX.md)** - Installation binaire pour Debian 13
+
+---
+
+## 🤖 API Bot
+
+<div align="center">
+  <a href="API_BOT.md">
+    <img src="https://img.shields.io/badge/API_Bot-Documentation-green?style=for-the-badge&logo=robot&logoColor=white" alt="Documentation API Bot"/>
+  </a>
+</div>
+
+L'**API Bot** permet aux applications tierces d'envoyer des messages automatisés dans les conversations AuroriaLink. Idéal pour :
+
+- **Pipelines CI/CD** - Notifications de statut de build
+- **Systèmes de monitoring** - Alertes en temps réel
+- **Automatisation de workflows** - Intégrations n8n, Zapier, Make
+- **Applications personnalisées** - Vos propres intégrations
+
+<details>
+<summary>⚡ <strong>Exemple d'intégration n8n</strong> - Connectez 400+ apps à votre chat d'équipe</summary>
+
+<br/>
+
+Utilisez un nœud **HTTP Request** dans n8n :
+
+| Paramètre | Valeur |
+|-----------|--------|
+| **Méthode** | `POST` |
+| **URL** | `https://quantive-studio.xyz/app/bot_api.php?route=api_messenger` |
+| **Type Body** | `Form URL Encoded` |
+| **Paramètres** | `key_access`: Votre token bot |
+| | `type_action`: `add_message` |
+| | `content_message`: `{{$json["message"]}}` |
+
+**Cas d'usage :**
+- Webhook GitHub → Notification nouvelle PR à l'équipe
+- Webhook Stripe → Alertes de paiement
+- Monitoring → Alertes serveur down
+- CRM → Notifications nouveaux leads
+- Calendrier → Rappels de réunions
+
+</details>
+
+**Exemple rapide (cURL) :**
+```bash
+curl -X POST "https://quantive-studio.xyz/app/bot_api.php?route=api_messenger" \
+  -d "key_access=VOTRE_TOKEN_BOT" \
+  -d "type_action=add_message" \
+  -d "content_message=Bonjour depuis mon bot !"
+```
+
+Consultez la **[documentation complète de l'API Bot](API_BOT.md)** pour les instructions de configuration, exemples de code (Python, Node.js, PHP) et référence API.
 
 ---
 
