@@ -468,7 +468,7 @@ When your bot sends a message, clients receive a WebSocket notification:
 
 ### Can I send messages to specific conversations?
 
-Currently, the Bot API broadcasts messages to **all conversations** where the bot is assigned. Conversation targeting is planned for a future release.
+Yes! Targeting is done through **bot assignment**. A bot only sends messages to conversations where it has been assigned. For granular control, create dedicated bots for specific conversations or channels.
 
 ### Can I send files or media?
 
@@ -678,7 +678,7 @@ API Bot ──▸ Backend PHP ──▸ Serveur WebSocket Node.js ──▸ Clie
 
 ### Puis-je envoyer des messages &agrave; des conversations sp&eacute;cifiques ?
 
-Actuellement, l'API Bot diffuse les messages &agrave; **toutes les conversations** o&ugrave; le bot est affect&eacute;. Le ciblage de conversation est pr&eacute;vu pour une version future.
+Oui ! Le ciblage se fait via **l'affectation du bot**. Un bot n'envoie des messages qu'aux conversations o&ugrave; il a &eacute;t&eacute; affect&eacute;. Pour un contr&ocirc;le granulaire, cr&eacute;ez des bots d&eacute;di&eacute;s pour des conversations ou canaux sp&eacute;cifiques.
 
 ### Puis-je envoyer des fichiers ou m&eacute;dias ?
 
