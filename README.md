@@ -221,6 +221,7 @@ Use an **HTTP Request** node in n8n to send messages:
 | **URL** | `https://quantive-studio.xyz/app/bot_api.php?route=api_messenger` |
 | **Body Type** | `Form URL Encoded` |
 | **Parameters** | `key_access`: Your bot token |
+| | `id_bot`: Your bot ID |
 | | `type_action`: `add_message` |
 | | `content_message`: `{{$json["message"]}}` |
 
@@ -237,6 +238,7 @@ Use an **HTTP Request** node in n8n to send messages:
 ```bash
 curl -X POST "https://quantive-studio.xyz/app/bot_api.php?route=api_messenger" \
   -d "key_access=YOUR_BOT_TOKEN" \
+  -d "id_bot=YOUR_BOT_ID" \
   -d "type_action=add_message" \
   -d "content_message=Hello from my bot!"
 ```
@@ -470,6 +472,7 @@ Utilisez un nœud **HTTP Request** dans n8n :
 | **URL** | `https://quantive-studio.xyz/app/bot_api.php?route=api_messenger` |
 | **Type Body** | `Form URL Encoded` |
 | **Paramètres** | `key_access`: Votre token bot |
+| | `id_bot`: Votre ID bot |
 | | `type_action`: `add_message` |
 | | `content_message`: `{{$json["message"]}}` |
 
@@ -486,6 +489,7 @@ Utilisez un nœud **HTTP Request** dans n8n :
 ```bash
 curl -X POST "https://quantive-studio.xyz/app/bot_api.php?route=api_messenger" \
   -d "key_access=VOTRE_TOKEN_BOT" \
+  -d "id_bot=VOTRE_ID_BOT" \
   -d "type_action=add_message" \
   -d "content_message=Bonjour depuis mon bot !"
 ```
