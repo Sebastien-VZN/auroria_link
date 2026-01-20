@@ -4,7 +4,7 @@
   <p><strong>Integrate automated messaging into your workflows</strong></p>
 
   <p>
-    <img src="https://img.shields.io/badge/API-v1.0-green?style=for-the-badge" alt="API Version"/>
+    <img src="https://img.shields.io/badge/API-v1.1-green?style=for-the-badge" alt="API Version"/>
     <img src="https://img.shields.io/badge/Method-POST-blue?style=for-the-badge" alt="HTTP Method"/>
   </p>
 </div>
@@ -45,12 +45,14 @@ The AuroriaLink Bot API allows third-party applications to send automated messag
 1. An AuroriaLink account
 2. At least one group conversation where you have admin rights
 3. Your bot's `key_access` token (obtained via the app)
+4. Your bot's `id_bot` identifier (displayed in bot settings)
 
 ### Send Your First Message
 
 ```bash
 curl -X POST "https://quantive-studio.xyz/app/bot_api.php?route=api_messenger" \
   -d "key_access=YOUR_BOT_TOKEN" \
+  -d "id_bot=YOUR_BOT_ID" \
   -d "type_action=add_message" \
   -d "content_message=Hello from my bot!"
 ```
@@ -101,7 +103,7 @@ In the AuroriaLink application:
    - **Description**: What the bot does
 4. Click **"Create"**
 
-**Important:** The `key_access` token is displayed **only once** at creation. Copy and store it securely!
+**Important:** The `key_access` token is displayed **only once** at creation. Copy and store it securely! The `id_bot` is always visible in your bot settings.
 
 ### Step 2: Assign Bot to Conversations
 
@@ -145,6 +147,7 @@ POST https://quantive-studio.xyz/app/bot_api.php?route=api_messenger
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `key_access` | string | **Yes** | Your bot's authentication token (encrypted) |
+| `id_bot` | string | **Yes** | Your bot's unique identifier |
 | `type_action` | string | **Yes** | Action to perform. Currently: `add_message` |
 | `content_message` | string | **Yes** | The message content to send |
 
@@ -185,6 +188,7 @@ POST https://quantive-studio.xyz/app/bot_api.php?route=api_messenger
 ```bash
 curl -X POST "https://quantive-studio.xyz/app/bot_api.php?route=api_messenger" \
   -d "key_access=TUlOREZDSyqlLtCi..." \
+  -d "id_bot=YOUR_BOT_ID" \
   -d "type_action=add_message" \
   -d "content_message=Server status: All systems operational"
 ```
@@ -194,12 +198,13 @@ curl -X POST "https://quantive-studio.xyz/app/bot_api.php?route=api_messenger" \
 ```python
 import requests
 
-def send_bot_message(token: str, message: str) -> dict:
+def send_bot_message(token: str, bot_id: str, message: str) -> dict:
     """Send a message via AuroriaLink Bot API."""
     url = "https://quantive-studio.xyz/app/bot_api.php"
 
     payload = {
         "key_access": token,
+        "id_bot": bot_id,
         "type_action": "add_message",
         "content_message": message
     }
@@ -215,6 +220,7 @@ def send_bot_message(token: str, message: str) -> dict:
 # Usage
 result = send_bot_message(
     token="YOUR_BOT_TOKEN",
+    bot_id="YOUR_BOT_ID",
     message="Daily report: 150 orders processed"
 )
 print(result)  # {"return_code": 0}
@@ -226,10 +232,11 @@ print(result)  # {"return_code": 0}
 const https = require('https');
 const querystring = require('querystring');
 
-function sendBotMessage(token, message) {
+function sendBotMessage(token, botId, message) {
   return new Promise((resolve, reject) => {
     const postData = querystring.stringify({
       key_access: token,
+      id_bot: botId,
       type_action: 'add_message',
       content_message: message
     });
@@ -258,7 +265,7 @@ function sendBotMessage(token, message) {
 }
 
 // Usage
-sendBotMessage('YOUR_BOT_TOKEN', 'Build #1234 completed successfully!')
+sendBotMessage('YOUR_BOT_TOKEN', 'YOUR_BOT_ID', 'Build #1234 completed successfully!')
   .then(result => console.log(result))
   .catch(error => console.error(error));
 ```
@@ -268,12 +275,13 @@ sendBotMessage('YOUR_BOT_TOKEN', 'Build #1234 completed successfully!')
 ```php
 <?php
 
-function sendBotMessage(string $token, string $message): array
+function sendBotMessage(string $token, string $botId, string $message): array
 {
     $url = 'https://quantive-studio.xyz/app/bot_api.php?route=api_messenger';
 
     $postData = [
         'key_access' => $token,
+        'id_bot' => $botId,
         'type_action' => 'add_message',
         'content_message' => $message
     ];
@@ -300,6 +308,7 @@ function sendBotMessage(string $token, string $message): array
 // Usage
 $result = sendBotMessage(
     'YOUR_BOT_TOKEN',
+    'YOUR_BOT_ID',
     'New user registered: john.doe@example.com'
 );
 print_r($result);
@@ -315,6 +324,7 @@ In n8n, use an **HTTP Request** node:
 | URL | `https://quantive-studio.xyz/app/bot_api.php?route=api_messenger` |
 | Body Content Type | Form URL Encoded |
 | Body Parameters | `key_access`: `{{$credentials.auroriaToken}}` |
+| | `id_bot`: `{{$credentials.auroriaBotId}}` |
 | | `type_action`: `add_message` |
 | | `content_message`: `{{$node["Previous"].json["message"]}}` |
 
@@ -408,6 +418,7 @@ Authentication failed or invalid request.
 
 **Checklist:**
 - [ ] Token is correct and not regenerated
+- [ ] `id_bot` matches your bot's identifier
 - [ ] URL is `https://quantive-studio.xyz/app/bot_api.php?route=api_messenger`
 - [ ] Method is POST (not GET)
 - [ ] `type_action` is `add_message`
@@ -528,12 +539,14 @@ L'API Bot AuroriaLink permet aux applications tierces d'envoyer des messages aut
 1. Un compte AuroriaLink
 2. Au moins une conversation de groupe o&ugrave; vous &ecirc;tes admin
 3. Le token `key_access` de votre bot (obtenu via l'app)
+4. L'identifiant `id_bot` de votre bot (affich&eacute; dans les param&egrave;tres du bot)
 
 ### Envoyez votre premier message
 
 ```bash
 curl -X POST "https://quantive-studio.xyz/app/bot_api.php?route=api_messenger" \
   -d "key_access=VOTRE_TOKEN_BOT" \
+  -d "id_bot=VOTRE_ID_BOT" \
   -d "type_action=add_message" \
   -d "content_message=Bonjour depuis mon bot !"
 ```
@@ -554,7 +567,7 @@ Dans l'application AuroriaLink :
    - **Description** : Ce que fait le bot
 4. Cliquez sur **"Cr&eacute;er"**
 
-**Important :** Le token `key_access` est affich&eacute; **une seule fois** &agrave; la cr&eacute;ation. Copiez-le et stockez-le en s&eacute;curit&eacute; !
+**Important :** Le token `key_access` est affich&eacute; **une seule fois** &agrave; la cr&eacute;ation. Copiez-le et stockez-le en s&eacute;curit&eacute; ! L'`id_bot` est toujours visible dans les param&egrave;tres de votre bot.
 
 ### &Eacute;tape 2 : Affecter le Bot aux Conversations
 
@@ -590,6 +603,7 @@ POST https://quantive-studio.xyz/app/bot_api.php?route=api_messenger
 | Param&egrave;tre | Type | Requis | Description |
 |------------------|------|--------|-------------|
 | `key_access` | string | **Oui** | Token d'authentification du bot |
+| `id_bot` | string | **Oui** | Identifiant unique du bot |
 | `type_action` | string | **Oui** | Action &agrave; effectuer : `add_message` |
 | `content_message` | string | **Oui** | Contenu du message &agrave; envoyer |
 
@@ -697,6 +711,6 @@ Non, l'API Bot est **en &eacute;criture seule**. Les bots peuvent envoyer mais p
 ---
 
 <div align="center">
-  <p><sub><strong>Guide version:</strong> 2026-01-17 | <strong>API version:</strong> 1.0</sub></p>
+  <p><sub><strong>Guide version:</strong> 2026-01-20 | <strong>API version:</strong> 1.1</sub></p>
   <p><a href="README.md">← Back to main documentation</a></p>
 </div>
