@@ -75,6 +75,8 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 
 > This project is currently in active development. Bugs and unexpected behaviors are therefore likely. All feedback is welcome.
 
+> **📧 Email limitation:** Microsoft email addresses (Outlook, Hotmail, Live) are currently blocked due to Microsoft blacklisting my server IP. Please use Gmail or other email providers for registration and 2FA. Also check your spam folder if you don't receive the verification email.
+
 ---
 
 ### ✨ Key Features
@@ -324,6 +326,8 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 ### ⚠️ Statut du projet : Version Beta
 
 > Ce projet est actuellement en phase de développement actif. Des bugs et des comportements inattendus sont donc probables. Les contributions et retours d'expérience sont les bienvenus.
+
+> **📧 Limitation email :** Les adresses Microsoft (Outlook, Hotmail, Live) sont actuellement bloquées car Microsoft a blacklisté l'IP de mon serveur. Veuillez utiliser Gmail ou un autre fournisseur email pour l'inscription et la 2FA. Pensez également à vérifier vos spams si vous ne recevez pas l'email de vérification.
 
 ---
 
