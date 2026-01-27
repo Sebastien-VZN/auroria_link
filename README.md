@@ -553,68 +553,74 @@ AuroriaLink et Axomind sont construits sur un **framework Flutter modulaire pers
 
 <div align="center">
   <h3>✨ Discover AuroriaLink in action</h3>
-  <p>Explore the real-time team messaging platform through these screenshots showcasing both mobile and desktop experiences with light and dark themes.</p>
+  <p>Explore the real-time team messaging platform through these screenshots showcasing both mobile and desktop experiences.</p>
 </div>
 
-### 📱 Mobile - Dark Theme
+### 💻 Desktop Experience
 
 <p align="center">
-  <img src="image/screenshot_01.png" alt="Mobile Dark - Conversation" width="19%"/>
-  <img src="image/screenshot_02.png" alt="Mobile Dark - File Sharing" width="19%"/>
-  <img src="image/screenshot_03.jpg" alt="Mobile Dark - Theme Selection" width="19%"/>
-  <img src="image/screenshot_04.png" alt="Mobile Dark - Settings" width="19%"/>
-  <img src="image/screenshot_05.png" alt="Mobile Dark - Media Gallery" width="19%"/>
+  <img src="image/desktop_1.jpg" alt="Desktop Screenshot 1" width="49%"/>
+  <img src="image/desktop_2.jpg" alt="Desktop Screenshot 2" width="49%"/>
 </p>
 
 <p align="center">
-  <img src="image/screenshot_09.png" alt="Mobile Dark - Files View" width="19%"/>
-  <img src="image/screenshot_11.png" alt="Mobile Dark - Conversation Files" width="19%"/>
-  <img src="image/screenshot_12.png" alt="Mobile Dark - Gallery View" width="19%"/>
-  <img src="image/screenshot_13.png" alt="Mobile Dark - Images Thread" width="19%"/>
-  <img src="image/screenshot_15.png" alt="Mobile Dark - Login Screen" width="19%"/>
-</p>
-
-### 📱 Mobile - Light Theme
-
-<p align="center">
-  <img src="image/screenshot_17.png" alt="Mobile Light - Settings" width="19%"/>
-  <img src="image/screenshot_18.png" alt="Mobile Light - Settings Neutral" width="19%"/>
-  <img src="image/screenshot_19.png" alt="Mobile Light - Settings Sepia" width="19%"/>
-  <img src="image/screenshot_20.png" alt="Mobile Light - Settings Aurora" width="19%"/>
-  <img src="image/screenshot_21.png" alt="Mobile Light - Settings Lavender" width="19%"/>
+  <img src="image/desktop_3.jpg" alt="Desktop Screenshot 3" width="49%"/>
+  <img src="image/desktop_4.jpg" alt="Desktop Screenshot 4" width="49%"/>
 </p>
 
 <p align="center">
-  <img src="image/screenshot_22.png" alt="Mobile Light - Settings Slate" width="19%"/>
-  <img src="image/screenshot_23.png" alt="Mobile Light - Gallery View" width="19%"/>
-  <img src="image/screenshot_24.png" alt="Mobile Light - Conversation" width="19%"/>
-</p>
-
-### 💻 Desktop - Dark Theme
-
-<p align="center">
-  <img src="image/screenshot_06.png" alt="Desktop Dark - Conversation List" width="49%"/>
-  <img src="image/screenshot_07.png" alt="Desktop Dark - Media Gallery" width="49%"/>
+  <img src="image/desktop_5.jpg" alt="Desktop Screenshot 5" width="49%"/>
+  <img src="image/desktop_6.jpg" alt="Desktop Screenshot 6" width="49%"/>
 </p>
 
 <p align="center">
-  <img src="image/screenshot_08.png" alt="Desktop Dark - Orange Theme" width="49%"/>
-  <img src="image/screenshot_10.png" alt="Desktop Dark - Images Thread" width="49%"/>
+  <img src="image/desktop_7.jpg" alt="Desktop Screenshot 7" width="49%"/>
+  <img src="image/desktop_8.jpg" alt="Desktop Screenshot 8" width="49%"/>
 </p>
 
 <p align="center">
-  <img src="image/screenshot_14.png" alt="Desktop Dark - Login Screen" width="49%"/>
-</p>
-
-### 💻 Desktop - Light Theme
-
-<p align="center">
-  <img src="image/screenshot_16.png" alt="Desktop Light - Gallery View" width="49%"/>
-  <img src="image/screenshot_25.png" alt="Desktop Light - Conversation" width="49%"/>
+  <img src="image/desktop_9.jpg" alt="Desktop Screenshot 9" width="49%"/>
+  <img src="image/desktop_10.jpg" alt="Desktop Screenshot 10" width="49%"/>
 </p>
 
 <p align="center">
-  <img src="image/screenshot_26.png" alt="Desktop Light - Files Manager" width="49%"/>
+  <img src="image/desktop_11.jpg" alt="Desktop Screenshot 11" width="49%"/>
+  <img src="image/desktop_12.jpg" alt="Desktop Screenshot 12" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_13.jpg" alt="Desktop Screenshot 13" width="49%"/>
+  <img src="image/desktop_14.jpg" alt="Desktop Screenshot 14" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_15.jpg" alt="Desktop Screenshot 15" width="49%"/>
+</p>
+
+### 📱 Mobile Experience
+
+<p align="center">
+  <img src="image/mobil_0.jpg" alt="Mobile Screenshot 0" width="19%"/>
+  <img src="image/mobil_1.jpg" alt="Mobile Screenshot 1" width="19%"/>
+  <img src="image/mobil_2.jpg" alt="Mobile Screenshot 2" width="19%"/>
+  <img src="image/mobil_3.jpg" alt="Mobile Screenshot 3" width="19%"/>
+  <img src="image/mobil_4.jpg" alt="Mobile Screenshot 4" width="19%"/>
+</p>
+
+<p align="center">
+  <img src="image/mobil_5.jpg" alt="Mobile Screenshot 5" width="19%"/>
+  <img src="image/mobil_5.png" alt="Mobile Screenshot 5 (alt)" width="19%"/>
+  <img src="image/mobil_6.jpg" alt="Mobile Screenshot 6" width="19%"/>
+  <img src="image/mobil_7.jpg" alt="Mobile Screenshot 7" width="19%"/>
+  <img src="image/mobil_8.jpg" alt="Mobile Screenshot 8" width="19%"/>
+</p>
+
+<p align="center">
+  <img src="image/mobil_9.jpg" alt="Mobile Screenshot 9" width="19%"/>
+  <img src="image/mobil_10.jpg" alt="Mobile Screenshot 10" width="19%"/>
+  <img src="image/mobil_11.jpg" alt="Mobile Screenshot 11" width="19%"/>
+  <img src="image/mobil_12.jpg" alt="Mobile Screenshot 12" width="19%"/>
+  <img src="image/mobil_13.jpg" alt="Mobile Screenshot 13" width="19%"/>
 </p>
 
 ---
