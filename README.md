@@ -55,6 +55,20 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
   </a>
 </p>
 
+## 🎥 Preview
+
+<details>
+<summary align="center"><strong>🔴 Click here to watch the demo video (Real-time Messaging)</strong></summary>
+
+<div align="center">
+  <br>
+  <video src="image/output_auroria.mp4" width="300" controls muted playsinline>
+  </video>
+  <p><sub><em>See AuroriaLink's real-time capabilities in action</em></sub></p>
+</div>
+
+</details>
+
 ## 📋 Table of Contents
 
 - [⚠️ Project Status](#️-project-status-beta-version)
@@ -555,6 +569,7 @@ AuroriaLink et Axomind sont construits sur un **framework Flutter modulaire pers
   <h3>✨ Discover AuroriaLink in action</h3>
   <p>Explore the real-time team messaging platform through these screenshots showcasing both mobile and desktop experiences.</p>
 </div>
+
 
 ### 💻 Desktop Experience
 
