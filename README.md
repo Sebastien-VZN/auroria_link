@@ -63,7 +63,7 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 <div align="center">
   <br>
   
-  <a href="image/output_auroria.mp4">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/raw/main/image/output_auroria.mp4">
     <img src="image/desktop_1.jpg" alt="Voir la démo vidéo" width="300">
   </a>
 
