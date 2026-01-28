@@ -62,8 +62,9 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 
 <div align="center">
   <br>
-  <video src="image/output_auroria.mp4" width="300" controls muted playsinline>
-  </video>
+  
+  ![Demo Video](image/output_auroria.mp4)
+
   <p><sub><em>See AuroriaLink's real-time capabilities in action</em></sub></p>
 </div>
 
