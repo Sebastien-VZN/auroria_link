@@ -64,7 +64,7 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
   <br>
   
   <a href="https://github.com/Sebastien-VZN/auroria_link/raw/main/image/output_auroria.mp4">
-    <img src="image/desktop_1.jpg" alt="Voir la démo vidéo" width="300">
+    <img src="image/desktop_1.jpg" alt="Watch the demo video" width="300">
   </a>
 
   <p><sub><em>See AuroriaLink's real-time capabilities in action</em></sub></p>
@@ -80,8 +80,8 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 - [💻 Supported Platforms](#-supported-platforms)
 - [🚀 Installation](#-installation)
 - [🤖 Bot API](#-bot-api)
-- [🎨 Gallery](#-gallery)
 - [🌐 About Axomind](#-about-axomind)
+- [🎨 Gallery](#-gallery)
 - [🤝 Contributing & Feedback](#-contributing--feedback)
 - [👤 Author](#-author)
 - [🇫🇷 Version Française](#-version-française)
@@ -225,7 +225,6 @@ See the **[complete Bot API documentation](API_BOT.md)** for setup instructions,
 
 <div align="center">
   <img src="image/logo_axomind.png" alt="Axomind Logo" width="150"/>
-  <p><sub><em>Axomind ecosystem logos are available in the <code>image/</code> directory</em></sub></p>
 </div>
 
 **Axomind** is the **next evolution** of the AuroriaLink project, currently **under active development**. It will be an all-in-one contextual team management ecosystem integrating three interconnected modules:
@@ -433,7 +432,6 @@ Consultez la **[documentation complète de l'API Bot](API_BOT.md)** pour les ins
 
 <div align="center">
   <img src="image/logo_axomind.png" alt="Logo Axomind" width="150"/>
-  <p><sub><em>Les logos de l'écosystème Axomind sont disponibles dans le répertoire <code>image/</code></em></sub></p>
 </div>
 
 **Axomind** est **l'évolution future** du projet AuroriaLink, actuellement **en développement actif**. Ce sera un écosystème de gestion d'équipe contextuel tout-en-un intégrant trois modules interconnectés :
