@@ -355,6 +355,17 @@ As a beta version, this project thrives on community feedback. If you encounter 
 
 ---
 
+## 🎥 Aperçu
+
+<div align="center">
+  <a href="https://github.com/Sebastien-VZN/auroria_link/raw/main/image/output_auroria.mp4">
+    <img src="image/desktop_1.jpg" alt="Regarder la vidéo de démonstration" width="500">
+  </a>
+  <p><sub><em>▶ Cliquez pour regarder la démo — messagerie en temps réel en action</em></sub></p>
+</div>
+
+---
+
 ### ✨ Fonctionnalités Clés
 
 **🔒 Confidentialité & Sécurité**
