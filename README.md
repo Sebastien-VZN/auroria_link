@@ -81,7 +81,7 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 - [🚀 Installation](#-installation)
 - [🤖 Bot API](#-bot-api)
 - [🎨 Gallery](#-gallery)
-- [🌱 Origins: Axomind & Custom Framework](#-origins-axomind--custom-framework)
+- [🌐 About Axomind](#-about-axomind)
 - [🤝 Contributing & Feedback](#-contributing--feedback)
 - [👤 Author](#-author)
 - [🇫🇷 Version Française](#-version-française)
@@ -108,7 +108,7 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 -   **👥 Private Discussion Channels**: Create partitioned channels for specific teams, projects, or topics, accessible only to authorized members.
 -   **🎤 Sequential Audio Messaging**: Record and send encrypted audio clips to create a fluid vocal conversation thread.
 -   **📎 Comprehensive File Sharing**: Share encrypted documents, images, videos, and audio files (up to 10 files per message, 10 MB per file) directly within your contextual conversations.
--   **📌 Smart File Management**: Files are retained for 1 month on the server. Pinned files are kept for a fixed 1 month, giving users who use the app less frequently the flexibility to keep important files accessible.
+-   **📌 Smart File Management**: Files are retained for 1 month on the server. Pinning a file resets its retention to 3 months from the pin date — each user who pins it extends its lifespan, allowing important files to remain accessible for less frequent users.
 -   **🧩 Modularity & Integration**: Designed as a standalone module that can be integrated as a service via its API.
 -   **💪 Robust Backend**: A **PHP 8.4 / PostgreSQL 17** backend with **PHP-FPM (80 workers)** ensures data persistence, user management, and permissions with enterprise-grade reliability.
 -   **🔗 Contextual API**: Securely create and link conversations to external object identifiers.
@@ -128,50 +128,6 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 </p>
 
 
-```
-╔═════════════════════════════════════════════════════════════╗
-║                    Client Applications                      ║
-║           Flutter (Android, Windows, Linux)                 ║
-║                                                             ║
-║  • Contextual messaging                                     ║
-║  • Encrypted file sharing (AES-256-GCM)                     ║
-║  • Audio messaging                                          ║
-║  • Auto-reconnection (exponential backoff)                  ║
-╚════════════╦═════════════════════════╦══════════════════════╝
-             ║ HTTP/HTTPS              ║ WSS (WebSocket Secure)
-             ║ (auth/data)             ║ (real-time messaging)
-             ↓                         ↓
-╔═════════════════════════╗   ╔════════════════════════════════╗
-║   Backend Server        ║   ║   Real-Time WebSocket Server   ║
-║   PHP 8.4 + Nginx       ║   ║   Node.js (quantive-ws)        ║
-║   PHP-FPM (80 workers)  ║   ║                                ║
-║                         ║   ║  • Port 8080 (clients)         ║
-║  Security Layers:       ║   ║  • Port 8081 (internal API)    ║
-║  1. Route validation    ║   ║  • Heartbeat 30s (ping/pong)   ║
-║  2. Brute force ctrl    ║   ║  • Multi-device (max 2)        ║
-║  3. 2FA (email PIN)     ║   ║  • Auth via PHP validation     ║
-║  4. AES-256-GCM         ║←──║  • Session management          ║
-║  5. Multi-device mgmt   ║   ╚════════════════════════════════╝
-║                         ║
-║  4-Level Cache:         ║
-║  • OPcache (bytecode)   ║
-║  • APCu (UUID→path)     ║
-║  • Ramdisk (4GB)        ║
-║  • Redis (2GB LRU)      ║
-╚════════╦════════════════╝
-         ║ Persistent PDO
-         ║ 11 critical indexes
-         ↓
-╔═══════════════════════════════════════════════════════════════╗
-║                 PostgreSQL 17 Database                        ║
-║                                                               ║
-║  • Encrypted messages (AES-256-GCM)                           ║
-║  • Retention: 6 months server / 1 year client (integrated DB) ║
-║  • File retention: 1 month server (pinned files: fixed 1 month)║
-║  • User management, permissions & roles                       ║
-║  • Indexed: users (auth), security (IP), messages (JSONB)     ║
-╚═══════════════════════════════════════════════════════════════╝
-```
 
 **How it works:**
 1. **Client** connects via HTTPS for auth/data and WSS for real-time messaging
@@ -312,7 +268,7 @@ Both AuroriaLink and Axomind are built upon a **custom modular Flutter framework
 
 ## 🤝 Contributing & Feedback
 
-As an beta version, this project thrives on community feedback. If you encounter a bug, have a feature request, or want to contribute, please feel free to open an issue on the repository.
+As a beta version, this project thrives on community feedback. If you encounter a bug, have a feature request, or want to contribute, please feel free to open an issue on the repository.
 
 ---
 
@@ -369,7 +325,7 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 -   **👥 Canaux de Discussion Privés** : Créez des canaux cloisonnés pour des équipes, projets ou sujets spécifiques, accessibles uniquement aux membres autorisés.
 -   **🎤 Messagerie Audio Séquentielle** : Enregistrez et envoyez des clips audio chiffrés pour créer un fil de conversation vocal fluide.
 -   **📎 Partage de Fichiers Complet** : Partagez documents, images, vidéos et fichiers audio chiffrés (jusqu'à 10 fichiers par message, 10 Mo par fichier), directement dans vos conversations contextuelles.
--   **📌 Gestion Intelligente des Fichiers** : Les fichiers sont conservés 1 mois sur le serveur. Les fichiers épinglés sont conservés pour une durée fixe d'1 mois, offrant aux utilisateurs peu fréquents la flexibilité de garder leurs fichiers importants accessibles.
+-   **📌 Gestion Intelligente des Fichiers** : Les fichiers sont conservés 1 mois sur le serveur. Épingler un fichier remet son compteur à 3 mois depuis la date d'épinglage — chaque utilisateur qui l'épingle prolonge sa durée de vie, permettant aux utilisateurs peu fréquents de garder leurs fichiers importants accessibles.
 -   **🧩 Modularité & Intégration** : Conçu comme un module autonome pouvant être intégré comme service via son API.
 -   **💪 Backend Robuste** : Un backend en **PHP 8.4 / PostgreSQL 17** avec **PHP-FPM** assure la persistance des données, la gestion des utilisateurs et des droits avec une fiabilité de niveau entreprise.
 -   **🔗 API Contextuelle** : Créez et liez dynamiquement des conversations à des identifiants d'objets externes de manière sécurisée.
@@ -388,50 +344,6 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
   <a href="https://www.debian.org/" target="_blank"><img src="https://img.shields.io/badge/Debian-13-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian 13"/></a>
 </p>
 
-```
-╔═════════════════════════════════════════════════════════════╗
-║                  Applications Clientes                      ║
-║           Flutter (Android, Windows, Linux)                 ║
-║                                                             ║
-║  • Messagerie contextuelle                                  ║
-║  • Partage de fichiers chiffrés (AES-256-GCM)               ║
-║  • Messagerie audio                                         ║
-║  • Auto-reconnexion (backoff exponentiel)                   ║
-╚════════════╦═════════════════════════╦══════════════════════╝
-             ║ HTTP/HTTPS              ║ WSS (WebSocket Secure)
-             ║ (auth/data)             ║ (messagerie temps réel)
-             ↓                         ↓
-╔═════════════════════════╗   ╔════════════════════════════════╗
-║   Serveur Backend       ║   ║   Serveur WebSocket Temps Réel ║
-║   PHP 8.4 + Nginx       ║   ║   Node.js (quantive-ws)        ║
-║   PHP-FPM (80 workers)  ║   ║                                ║
-║                         ║   ║  • Port 8080 (clients)         ║
-║  Couches de sécurité :  ║   ║  • Port 8081 (API interne)     ║
-║  1. Validation routes   ║   ║  • Heartbeat 30s (ping/pong)   ║
-║  2. Contrôle brute force║   ║  • Multi-device (max 2)        ║
-║  3. 2FA (PIN email)     ║   ║  • Auth via validation PHP     ║
-║  4. AES-256-GCM         ║←──║  • Gestion des sessions        ║
-║  5. Gestion multi-device║   ╚════════════════════════════════╝
-║                         ║
-║  Cache 4 niveaux :      ║
-║  • OPcache (bytecode)   ║
-║  • APCu (UUID→path)     ║
-║  • Ramdisk (4GB)        ║
-║  • Redis (2GB LRU)      ║
-╚════════╦════════════════╝
-         ║ PDO persistant
-         ║ 11 index critiques
-         ↓
-╔═══════════════════════════════════════════════════════════════╗
-║               Base de données PostgreSQL 17                   ║
-║                                                               ║
-║  • Messages chiffrés (AES-256-GCM)                            ║
-║  • Rétention : 6 mois serveur / 1 an client (DB intégrée)    ║
-║  • Fichiers : 1 mois serveur (épinglés : 1 mois fixe)        ║
-║  • Gestion utilisateurs, permissions & rôles                  ║
-║  • Indexé : users (auth), security (IP), messages (JSONB)     ║
-╚═══════════════════════════════════════════════════════════════╝
-```
 
 **Fonctionnement :**
 1. Le **Client** se connecte via HTTPS pour auth/données et WSS pour la messagerie temps réel
