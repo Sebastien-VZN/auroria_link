@@ -9,8 +9,8 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Version-0.8.3%20(25)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-    <img src="https://img.shields.io/badge/Release%20Date-2026--02--15-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+    <img src="https://img.shields.io/badge/Version-0.8.4%20(26)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2026--03--03-blue?style=flat-square&logo=calendar" alt="Release Date"/>
   </p>
 </div>
 
@@ -101,14 +101,14 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 -   **⚡ Real-Time Communication**: Architecture based on a **WebSocket (Node.js)** server for instant, full-duplex exchanges with heartbeat monitoring (30s) and automatic reconnection.
 -   **🔒 Absolute Privacy & Encryption**: The messaging is **100% private**. All messages and files are **encrypted at rest on the server** with **AES-256-GCM** (streaming chunks 8MB). Communications transit via **HTTPS** and **WSS (WebSocket Secure)**, ensuring end-to-end maximum security.
 -   **🚀 High-Performance Backend**: 4-level RAM cache architecture (OPcache → APCu → Ramdisk → Redis) delivering **-80% CPU decrypt load**, **+150% throughput**, and **×2 bandwidth**. Persistent database connections and 11 critical indexes ensure ultra-fast queries.
--   **⏱️ Optimized Message Retention**: Messages are retained for 15 days on the server and 1 year on the client (integrated database), with an option for automatic deletion after 24 hours for maximum confidentiality. Daily cleanup at midnight to limit server load and optimize storage costs.
+-   **⏱️ Optimized Message Retention**: Messages are retained for 6 months on the server and 1 year on the client (integrated local database), with an option for automatic deletion after 24 hours for maximum confidentiality. Daily cleanup at midnight to limit server load and optimize storage costs.
 -   **📱 Multi-Device Support**: Switch seamlessly between your devices (desktop or mobile) with automatic session management. **Maximum 2 simultaneous connections** per user for optimal security and resource management.
 -   **🔄 Smart Reconnection**: Automatic reconnection with exponential backoff in case of network loss, with 2FA validation when necessary to ensure your session security.
 -   **🛡️ 5-Layer Security**: Route validation, brute force protection with IP tracking, 2FA via email (PIN 6-digit), AES-256-GCM encryption, and intelligent multi-device management.
 -   **👥 Private Discussion Channels**: Create partitioned channels for specific teams, projects, or topics, accessible only to authorized members.
 -   **🎤 Sequential Audio Messaging**: Record and send encrypted audio clips to create a fluid vocal conversation thread.
 -   **📎 Comprehensive File Sharing**: Share encrypted documents, images, videos, and audio files (up to 10 files per message, 10 MB per file) directly within your contextual conversations.
--   **📌 Smart File Management**: Files are retained for 15 days on the server, or 3 months if pinned. Each pin resets the 3-month timer, allowing only important files to be retained and optimizing server storage.
+-   **📌 Smart File Management**: Files are retained for 1 month on the server. Pinned files are kept for a fixed 1 month, giving users who use the app less frequently the flexibility to keep important files accessible.
 -   **🧩 Modularity & Integration**: Designed as a standalone module that can be integrated as a service via its API.
 -   **💪 Robust Backend**: A **PHP 8.4 / PostgreSQL 17** backend with **PHP-FPM (80 workers)** ensures data persistence, user management, and permissions with enterprise-grade reliability.
 -   **🔗 Contextual API**: Securely create and link conversations to external object identifiers.
@@ -166,8 +166,8 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 ║                 PostgreSQL 17 Database                        ║
 ║                                                               ║
 ║  • Encrypted messages (AES-256-GCM)                           ║
-║  • Retention: 15 days server / 1 year client (integrated DB)  ║
-║  • Smart file retention (pinning resets 3-month timer)        ║
+║  • Retention: 6 months server / 1 year client (integrated DB) ║
+║  • File retention: 1 month server (pinned files: fixed 1 month)║
 ║  • User management, permissions & roles                       ║
 ║  • Indexed: users (auth), security (IP), messages (JSONB)     ║
 ╚═══════════════════════════════════════════════════════════════╝
@@ -190,7 +190,6 @@ Built with a core philosophy of **intelligent optimization**, AuroriaLink minimi
 | Linux    | ✅ Supported           |
 | macOS    | ❌ Not yet supported   |
 | iOS      | ❌ Not yet supported   |
-| Web      | ❌ Not supported       |
 
 ---
 
@@ -363,14 +362,14 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 -   **⚡ Communication Temps Réel** : Architecture basée sur un serveur **WebSocket (Node.js)** pour des échanges full-duplex instantanés avec monitoring heartbeat (30s) et reconnexion automatique.
 -   **🔒 Confidentialité & Chiffrement Absolu** : La messagerie est **100% privée**. Tous les messages et fichiers sont **chiffrés au repos sur le serveur** avec **AES-256-GCM** (streaming chunks 8MB). Les communications transitent via **HTTPS** et **WSS (WebSocket Secure)**, garantissant une sécurité maximale de bout en bout.
 -   **🚀 Backend Haute Performance** : Architecture cache RAM 4 niveaux (OPcache → APCu → Ramdisk → Redis) offrant **-80% charge CPU déchiffrement**, **+150% throughput**, et **×2 bande passante**. Connexions base de données persistantes et 11 index critiques assurent des requêtes ultra-rapides.
--   **⏱️ Rétention des Messages Optimisée** : Les messages sont conservés 15 jours sur le serveur et 1 an sur le client (base de données intégrée), avec option de suppression automatique après 24h pour une confidentialité maximale. Nettoyage quotidien à minuit pour limiter la charge serveur et optimiser les coûts de stockage.
+-   **⏱️ Rétention des Messages Optimisée** : Les messages sont conservés 6 mois sur le serveur et 1 an sur le client (base de données locale intégrée), avec option de suppression automatique après 24h pour une confidentialité maximale. Nettoyage quotidien à minuit pour limiter la charge serveur et optimiser les coûts de stockage.
 -   **📱 Support Multi-Device** : Basculez facilement entre vos appareils (desktop ou mobile) avec gestion automatique des sessions. **Maximum 2 connexions simultanées** par utilisateur pour une sécurité et gestion des ressources optimales.
 -   **🔄 Reconnexion Intelligente** : Reconnexion automatique avec backoff exponentiel en cas de perte de réseau, avec validation 2FA si nécessaire pour garantir la sécurité de votre session.
 -   **🛡️ Sécurité 5 Couches** : Validation des routes, protection brute force avec tracking IP, 2FA par email (PIN 6 chiffres), chiffrement AES-256-GCM, et gestion intelligente multi-device.
 -   **👥 Canaux de Discussion Privés** : Créez des canaux cloisonnés pour des équipes, projets ou sujets spécifiques, accessibles uniquement aux membres autorisés.
 -   **🎤 Messagerie Audio Séquentielle** : Enregistrez et envoyez des clips audio chiffrés pour créer un fil de conversation vocal fluide.
 -   **📎 Partage de Fichiers Complet** : Partagez documents, images, vidéos et fichiers audio chiffrés (jusqu'à 10 fichiers par message, 10 Mo par fichier), directement dans vos conversations contextuelles.
--   **📌 Gestion Intelligente des Fichiers** : Les fichiers sont conservés 15 jours sur le serveur, ou 3 mois s'ils sont épinglés. Chaque épinglage réinitialise le compteur à 3 mois, permettant de conserver uniquement les fichiers importants et d'optimiser le stockage serveur.
+-   **📌 Gestion Intelligente des Fichiers** : Les fichiers sont conservés 1 mois sur le serveur. Les fichiers épinglés sont conservés pour une durée fixe d'1 mois, offrant aux utilisateurs peu fréquents la flexibilité de garder leurs fichiers importants accessibles.
 -   **🧩 Modularité & Intégration** : Conçu comme un module autonome pouvant être intégré comme service via son API.
 -   **💪 Backend Robuste** : Un backend en **PHP 8.4 / PostgreSQL 17** avec **PHP-FPM** assure la persistance des données, la gestion des utilisateurs et des droits avec une fiabilité de niveau entreprise.
 -   **🔗 API Contextuelle** : Créez et liez dynamiquement des conversations à des identifiants d'objets externes de manière sécurisée.
@@ -427,8 +426,8 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 ║               Base de données PostgreSQL 17                   ║
 ║                                                               ║
 ║  • Messages chiffrés (AES-256-GCM)                            ║
-║  • Rétention : 15 jours serveur / 1 an client (DB intégrée)  ║
-║  • Rétention intelligente (épinglage réinitialise 3 mois)     ║
+║  • Rétention : 6 mois serveur / 1 an client (DB intégrée)    ║
+║  • Fichiers : 1 mois serveur (épinglés : 1 mois fixe)        ║
 ║  • Gestion utilisateurs, permissions & rôles                  ║
 ║  • Indexé : users (auth), security (IP), messages (JSONB)     ║
 ╚═══════════════════════════════════════════════════════════════╝
