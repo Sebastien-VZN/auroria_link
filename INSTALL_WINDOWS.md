@@ -84,7 +84,7 @@ AuroriaLink is not signed with a Microsoft certificate (high annual cost). This 
 
 ---
 
-**Guide version:** 2025-12-18
+**Guide version:** 2026-03-03
 
 ---
 
@@ -175,6 +175,6 @@ AuroriaLink n'est pas signé avec un certificat Microsoft (coût annuel élevé)
 
 ---
 
-**Version du guide :** 2025-12-18
+**Version du guide :** 2026-03-03
 
 </details>

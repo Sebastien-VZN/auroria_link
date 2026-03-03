@@ -711,6 +711,6 @@ Non, l'API Bot est **en &eacute;criture seule**. Les bots peuvent envoyer mais p
 ---
 
 <div align="center">
-  <p><sub><strong>Guide version:</strong> 2026-01-20 | <strong>API version:</strong> 1.1</sub></p>
+  <p><sub><strong>Guide version:</strong> 2026-03-03 | <strong>API version:</strong> 1.1</sub></p>
   <p><a href="README.md">← Back to main documentation</a></p>
 </div>

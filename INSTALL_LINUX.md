@@ -504,7 +504,7 @@ sudo apt install -y \
 
 ---
 
-**Last updated:** 2025-12-18
+**Last updated:** 2026-03-03
 
 ---
 
@@ -1015,6 +1015,6 @@ sudo apt install -y \
 
 ---
 
-**Dernière mise à jour :** 2025-12-18
+**Dernière mise à jour :** 2026-03-03
 
 </details>

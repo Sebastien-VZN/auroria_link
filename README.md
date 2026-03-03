@@ -319,6 +319,34 @@ As a beta version, this project thrives on community feedback. If you encounter 
 
 ## 🚀 Télécharger la dernière version
 
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="33%">
+        <a href="INSTALL_ANDROID.md">
+          <img src="https://img.shields.io/badge/Android-Installer-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Installer pour Android"/>
+        </a>
+        <br/>
+        <sub>APK • <a href="INSTALL_ANDROID.md">Guide d'installation</a></sub>
+      </td>
+      <td align="center" width="33%">
+        <a href="INSTALL_WINDOWS.md">
+          <img src="https://img.shields.io/badge/Windows-Installer-3A6DF0?style=for-the-badge&logo=windows11&logoColor=white" alt="Installer pour Windows"/>
+        </a>
+        <br/>
+        <sub>ZIP • <a href="INSTALL_WINDOWS.md">Guide d'installation</a></sub>
+      </td>
+      <td align="center" width="33%">
+        <a href="INSTALL_LINUX.md">
+          <img src="https://img.shields.io/badge/Linux-Installer-8A6DF0?style=for-the-badge&logo=linux&logoColor=white" alt="Installer pour Linux"/>
+        </a>
+        <br/>
+        <sub>Debian 13 • <a href="INSTALL_LINUX.md">Guide d'installation</a></sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
 <p align="center">
   <a href="https://github.com/Sebastien-VZN/auroria_link/releases">
     <img src="https://img.shields.io/badge/Voir_toutes_les-Versions-gray?style=flat&logo=github" alt="Toutes les versions"/>
