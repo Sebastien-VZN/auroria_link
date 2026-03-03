@@ -319,7 +319,7 @@ As an beta version, this project thrives on community feedback. If you encounter
 ## 👤 Author
 
 <div align="center">
-  <a href="https://materiaeobscurataelab.xyz/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-3423A6?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Link to Portfolio"/></a>
+  <a href="https://sebastien-vezzani.xyz/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-3423A6?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Link to Portfolio"/></a>
 </div>
 
 ---
@@ -450,7 +450,6 @@ Conçue avec une philosophie d'**optimisation intelligente**, AuroriaLink minimi
 | Linux      | ✅ Supporté                    |
 | macOS      | ❌ Non supporté pour le moment |
 | iOS        | ❌ Non supporté pour le moment |
-| Web        | ❌ Non supporté                |
 
 ---
 
