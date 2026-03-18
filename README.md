@@ -381,7 +381,7 @@ As a beta version, this project thrives on community feedback. If you encounter 
 - 👥 **Canaux Privés** — Des espaces dédiés pour vos équipes, projets ou sujets
 - 🎤 **Messages Audio** — Enregistrez et envoyez des clips vocaux dans vos conversations
 - 📎 **Partage de Fichiers** — Jusqu'à 10 fichiers par message (documents, images, vidéos, audio — 10 Mo chacun)
-- ⏱️ **Rétention Intelligente** — Messages conservés 1 an sur le serveur / 2 an en local, avec suppression automatique optionnelle après 24h · Fichiers conservés 1 mois (3 mois si épinglé)
+- ⏱️ **Rétention Intelligente** — Messages conservés 1 an sur le serveur / 2 ans en local, avec suppression automatique optionnelle après 24h · Fichiers conservés 1 mois (3 mois si épinglé)
 
 **🧩 Intégrations**
 - 🤖 **API Bot** — Connectez vos outils : CI/CD, monitoring, plateformes d'automatisation (n8n, Make, Zapier...)
