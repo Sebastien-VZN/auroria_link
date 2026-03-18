@@ -101,7 +101,7 @@
 - 👥 **Private Channels** — Dedicated spaces for your teams, projects, or topics
 - 🎤 **Audio Messages** — Record and send voice clips in your conversations
 - 📎 **File Sharing** — Up to 10 files per message (documents, images, videos, audio — 10 MB each)
-- ⏱️ **Smart Retention** — Messages kept 6 months on server / 1 year locally, with optional 24h auto-delete · Files kept 1 month (3 months if pinned)
+- ⏱️ **Smart Retention** — Messages kept 1 year on server / 2 years locally, with optional 24h auto-delete · Files kept 1 month (3 months if pinned)
 
 **🧩 Integrations**
 - 🤖 **Bot API** — Connect your tools: CI/CD, monitoring, automation platforms (n8n, Make, Zapier...)
@@ -381,7 +381,7 @@ As a beta version, this project thrives on community feedback. If you encounter 
 - 👥 **Canaux Privés** — Des espaces dédiés pour vos équipes, projets ou sujets
 - 🎤 **Messages Audio** — Enregistrez et envoyez des clips vocaux dans vos conversations
 - 📎 **Partage de Fichiers** — Jusqu'à 10 fichiers par message (documents, images, vidéos, audio — 10 Mo chacun)
-- ⏱️ **Rétention Intelligente** — Messages conservés 6 mois sur le serveur / 1 an en local, avec suppression automatique optionnelle après 24h · Fichiers conservés 1 mois (3 mois si épinglé)
+- ⏱️ **Rétention Intelligente** — Messages conservés 1 an sur le serveur / 2 an en local, avec suppression automatique optionnelle après 24h · Fichiers conservés 1 mois (3 mois si épinglé)
 
 **🧩 Intégrations**
 - 🤖 **API Bot** — Connectez vos outils : CI/CD, monitoring, plateformes d'automatisation (n8n, Make, Zapier...)
