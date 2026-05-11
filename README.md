@@ -261,24 +261,9 @@ Both AuroriaLink and Axomind are built upon a **custom modular Flutter framework
 * **Adaptability**: Behavior adjusts based on context (user, platform)
 * **Separation of Concerns**: Strict partitioning between business logic, UI, data, and configuration
 
-<details>
-<summary>👁️ Axomind App Preview (Work in Progress)</summary>
-
-**Light Theme**
-<p>
-<img src="image/axomind_light.png" alt="Axomind Light 1" width="32%"/>
-<img src="image/axomind_light_2.png" alt="Axomind Light 2" width="32%"/>
-<img src="image/axomind_light_3.png" alt="Axomind Light 3" width="32%"/>
-</p>
-
-**Dark Theme**
-<p>
-<img src="image/axomind_dark.png" alt="Axomind Dark 1" width="32%"/>
-<img src="image/axomind_dark_2.png" alt="Axomind Dark 2" width="32%"/>
-<img src="image/axomind_dark_3.png" alt="Axomind Dark 3" width="32%"/>
-</p>
-
-</details>
+<div align="center">
+  <a href="https://github.com/Sebastien-VZN/axomind"><img src="https://img.shields.io/badge/Axomind-Repository-3423A6?style=for-the-badge&logo=github&logoColor=white" alt="Axomind Repository"/></a>
+</div>
 
 ---
 
@@ -470,24 +455,9 @@ AuroriaLink et Axomind sont construits sur un **framework Flutter modulaire pers
 * **Adaptabilité** : Le comportement s'ajuste en fonction du contexte (utilisateur, plateforme)
 * **Séparation des responsabilités** : Cloisonnement strict entre logique métier, UI, données et configuration
 
-<details>
-<summary>👁️ Aperçu d'Axomind (En cours de développement)</summary>
-
-**Thème Clair**
-<p>
-<img src="image/axomind_light.png" alt="Axomind Clair 1" width="32%"/>
-<img src="image/axomind_light_2.png" alt="Axomind Clair 2" width="32%"/>
-<img src="image/axomind_light_3.png" alt="Axomind Clair 3" width="32%"/>
-</p>
-
-**Thème Sombre**
-<p>
-<img src="image/axomind_dark.png" alt="Axomind Sombre 1" width="32%"/>
-<img src="image/axomind_dark_2.png" alt="Axomind Sombre 2" width="32%"/>
-<img src="image/axomind_dark_3.png" alt="Axomind Sombre 3" width="32%"/>
-</p>
-
-</details>
+<div align="center">
+  <a href="https://github.com/Sebastien-VZN/axomind"><img src="https://img.shields.io/badge/Axomind-Dépôt-3423A6?style=for-the-badge&logo=github&logoColor=white" alt="Dépôt Axomind"/></a>
+</div>
 
 </details>
 
