@@ -5,7 +5,7 @@
   
   <p>
     <img src="https://img.shields.io/badge/status-beta-blue?style=for-the-badge" alt="Project Status: Beta"/>
-    <img src="https://img.shields.io/badge/license-Proprietary-red?style=for-the-badge" alt="License: Proprietary"/>
+    <img src="https://img.shields.io/badge/license-Proprietary-yellow?style=for-the-badge" alt="License: Proprietary"/>
         <img src="https://img.shields.io/badge/Under-maintenance-red?style=for-the-badge" alt="License: Under maintenance"/>
   </p>
 
