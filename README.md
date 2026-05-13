@@ -5,12 +5,11 @@
   
   <p>
     <img src="https://img.shields.io/badge/status-beta-blue?style=for-the-badge" alt="Project Status: Beta"/>
-        <img src="https://img.shields.io/badge/Under-maintenance-red?style=for-the-badge" alt="License: Under maintenance"/>
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Version-0.10.1%20(30)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-    <img src="https://img.shields.io/badge/Release%20Date-2026--05--11-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+    <img src="https://img.shields.io/badge/Version-0.10.3%20(34)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2026--05--13-blue?style=flat-square&logo=calendar" alt="Release Date"/>
   </p>
 </div>
 
