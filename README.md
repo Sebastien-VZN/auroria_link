@@ -13,7 +13,7 @@
   </p>
 </div>
 
-**AuroriaLink** — private encrypted messaging for teams. Group channels, file sharing, zero tracking.
+**AuroriaLink** — private encrypted messaging for teams. Group channels, file sharing, 26 themes (light + dark), zero tracking.
 
 ---
 
@@ -97,6 +97,9 @@
 **⚡ Real-Time**
 - ⚡ **Instant Delivery** — Messages arrive instantly, with automatic reconnection if the link drops
 - 📱 **Multi-Device** — Stay signed in on **up to 2 devices for AuroriaLink** (1 desktop + 1 mobile). If you also use Axomind, you get **2 more sessions in parallel** — up to 4 active sessions in total per account, by design
+
+**🎨 Interface**
+- 🎨 **26 Themes** — Each with a light and a dark variant, switchable on the fly, with Aurora animations and glassmorphism (same theme set as Axomind)
 
 **💬 Messaging**
 - 👥 **Private Channels** — Dedicated spaces for your teams, projects, or topics
@@ -291,7 +294,7 @@ This is a beta. If you run into a bug, have a feature suggestion, or want to con
   <p><strong>Une messagerie d'équipe privée et chiffrée.</strong></p>
 </div>
 
-**AuroriaLink** — messagerie chiffrée et privée pour les équipes. Canaux de groupe, partage de fichiers, zéro tracking.
+**AuroriaLink** — messagerie chiffrée et privée pour les équipes. Canaux de groupe, partage de fichiers, 26 thèmes (clair + sombre), zéro tracking.
 
 ### ⚠️ Statut du projet : Version Beta
 
@@ -362,6 +365,9 @@ This is a beta. If you run into a bug, have a feature suggestion, or want to con
 **⚡ Temps Réel**
 - ⚡ **Livraison Instantanée** — Les messages arrivent en direct, avec reconnexion automatique en cas de coupure
 - 📱 **Multi-Appareils** — Restez connecté sur **2 appareils pour AuroriaLink** (1 desktop + 1 mobile). Si vous utilisez aussi Axomind, vous disposez de **2 sessions supplémentaires en parallèle** — jusqu'à 4 sessions actives au total par compte, par design
+
+**🎨 Interface**
+- 🎨 **26 Thèmes** — Chacun avec une variante claire et une sombre, interchangeables à la volée, avec animations Aurora et glassmorphism (le même set de thèmes qu'Axomind)
 
 **💬 Messagerie**
 - 👥 **Canaux Privés** — Des espaces dédiés pour vos équipes, projets ou sujets
