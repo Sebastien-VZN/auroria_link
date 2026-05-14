@@ -8,7 +8,7 @@
 
 ## 🚀 Download
 
-Download the **`windows.zip`** archive from [the releases page](https://github.com/Sebastien-VZN/auroria_link/releases).
+Download the **`AuroriaLink_X.X.X.zip`** archive from [the releases page](https://github.com/Sebastien-VZN/auroria_link/releases).
 
 ---
 
@@ -16,7 +16,7 @@ Download the **`windows.zip`** archive from [the releases page](https://github.c
 
 ### Step 1: Extract the Archive
 
-1. **Download the `windows.zip` archive**.
+1. **Download the `AuroriaLink_X.X.X.zip` archive**.
 2. **Right-click** on the downloaded file.
 3. Select **Extract All...** or use software like WinRAR, 7-Zip, etc.
 4. **Choose a location** to extract the files.
@@ -84,7 +84,7 @@ AuroriaLink is not signed with a Microsoft certificate (high annual cost). This 
 
 ---
 
-**Guide version:** 2026-03-03
+**Guide version:** 2026-05-14
 
 ---
 
@@ -99,7 +99,7 @@ AuroriaLink is not signed with a Microsoft certificate (high annual cost). This 
 
 ## 🚀 Téléchargement
 
-Téléchargez l'archive **`windows.zip`** depuis [les releases](https://github.com/Sebastien-VZN/auroria_link/releases).
+Téléchargez l'archive **`AuroriaLink_X.X.X.zip`** depuis [les releases](https://github.com/Sebastien-VZN/auroria_link/releases).
 
 ---
 
@@ -107,7 +107,7 @@ Téléchargez l'archive **`windows.zip`** depuis [les releases](https://github.c
 
 ### Étape 1 : Décompresser l'archive
 
-1. **Téléchargez l'archive `windows.zip`**.
+1. **Téléchargez l'archive `AuroriaLink_X.X.X.zip`**.
 2. **Faites un clic droit** sur le fichier téléchargé.
 3. Sélectionnez **Extraire tout...** ou utilisez un logiciel comme WinRAR, 7-Zip, etc.
 4. **Choisissez un emplacement** pour extraire les fichiers.
@@ -175,6 +175,6 @@ AuroriaLink n'est pas signé avec un certificat Microsoft (coût annuel élevé)
 
 ---
 
-**Version du guide :** 2026-03-03
+**Version du guide :** 2026-05-14
 
 </details>

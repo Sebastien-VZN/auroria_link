@@ -53,7 +53,7 @@ These security measures are implemented by Android to protect users. Since Auror
 
 ---
 
-**Guide version:** 2026-03-03
+**Guide version:** 2026-05-14
 
 ---
 
@@ -113,6 +113,6 @@ Ces mesures de sécurité sont mises en place par Android pour protéger les uti
 
 ---
 
-**Version du guide :** 2026-03-03
+**Version du guide :** 2026-05-14
 
 </details>

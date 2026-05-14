@@ -5,12 +5,11 @@
   
   <p>
     <img src="https://img.shields.io/badge/status-beta-blue?style=for-the-badge" alt="Project Status: Beta"/>
-    <img src="https://img.shields.io/badge/license-Proprietary-red?style=for-the-badge" alt="License: Proprietary"/>
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Version-0.10.1%20(30)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-    <img src="https://img.shields.io/badge/Release%20Date-2026--05--11-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+    <img src="https://img.shields.io/badge/Version-0.10.4%20(35)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2026--05--14-blue?style=flat-square&logo=calendar" alt="Release Date"/>
   </p>
 </div>
 
@@ -80,31 +79,33 @@
 
 ### ⚠️ Project Status: Beta Version
 
-> This project is currently in active development. Bugs and unexpected behaviors are therefore likely. All feedback is welcome.
+> This project is in active development. Bugs and unexpected behaviors are likely. Feedback is welcome.
 
-> **📧 Email limitation:** check your spam folder if you don't receive the verification email.
+> **📧 About emails**
+> The server is self-hosted, and my internet provider currently blocks it from sending emails. So **everything that would normally rely on email is switched off for now** — account verification, password reset, and two-factor authentication. Accounts work without any email step.
+> The whole email layer is built in and can be turned back on as soon as the problem is fixed — nothing else changes for you.
 
 ---
 
 ### ✨ Key Features
 
 **🔒 Privacy & Security**
-- 🔒 **Full Encryption** — Messages and files are encrypted on the server and in transit. Your conversations stay private.
-- 🛡️ **2FA Protection** — Email-based two-factor authentication (6-digit PIN) with brute force and IP tracking protection
-- 🔐 **Access Control** — Each member only accesses what they're authorized to, with role-based permissions
+- 🔒 **Strong Encryption** — Messages and files are encrypted with AES-256-GCM, both when stored on the server and while being sent. Your conversations stay private.
+- 🛡️ **Two-factor authentication (built in, off for now)** — Email code at login, with anti-spam and bad-attempt detection. Designed to be switched on or off easily — currently off because of the email issue above.
+- 🔐 **Access Control** — Each member only sees what they're allowed to, with role-based permissions
 
 **⚡ Real-Time**
-- ⚡ **Instant Delivery** — Messages arrive in real-time, with automatic reconnection if you lose network
-- 📱 **Multi-Device** — Stay connected from desktop and mobile at the same time (up to 2 devices)
+- ⚡ **Instant Delivery** — Messages arrive instantly, with automatic reconnection if the link drops
+- 📱 **Multi-Device** — Stay signed in on **up to 2 devices for AuroriaLink** (1 desktop + 1 mobile). If you also use Axomind, you get **2 more sessions in parallel** — up to 4 active sessions in total per account, by design
 
 **💬 Messaging**
 - 👥 **Private Channels** — Dedicated spaces for your teams, projects, or topics
 - 🎤 **Audio Messages** — Record and send voice clips in your conversations
 - 📎 **File Sharing** — Up to 10 files per message (documents, images, videos, audio — 10 MB each)
-- ⏱️ **Smart Retention** — Messages kept 1 year on server / 2 years locally, with optional 24h auto-delete · Files kept 1 month (3 months if pinned)
+- ⏱️ **Retention** — Messages kept 1 year on the server / 2 years locally, with optional 24h auto-delete · Files kept 1 month (3 months if pinned)
 
 **🧩 Integrations**
-- 🤖 **Bot API** — Connect your tools: CI/CD, monitoring, automation platforms (n8n, Make, Zapier...)
+- 🤖 **Bot API** — Send messages from CI/CD, monitoring, or automation tools (n8n, Make, Zapier...)
 - 🔗 **Contextual Linking** — Attach conversations to your projects, tasks, or any external resource
 
 ---
@@ -123,11 +124,11 @@
   <a href="https://www.debian.org/" target="_blank"><img src="https://img.shields.io/badge/Debian-13-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian 13"/></a>
 </p>
 
-**How it works:**
-1. **Client** connects via HTTPS for auth/data and WSS for real-time messaging
-2. **WebSocket Server** handles instant bidirectional communication with heartbeat (30s) and multi-device support (max 2 connections)
-3. **Backend** manages 5 security layers (route validation, brute force, 2FA, AES-256-GCM, multi-device), with 4-level RAM cache for optimal performance
-4. **Database** stores encrypted data with intelligent retention policies and optimized indexes for fast queries
+**How it works (in plain words):**
+1. **The app** talks to the server over a secure connection (HTTPS), and a separate live channel keeps everything in sync in real time
+2. **The live channel** can keep 2 sessions open at once for AuroriaLink (1 desktop + 1 mobile). The same design supports 2 extra sessions for Axomind in parallel — 4 active sessions total per account
+3. **The server** protects accounts on several layers: route checks, attack protection, AES-256-GCM encryption, and a unique token per session. Two-factor authentication is built in and kept independent from the regular login — it's off for now because of the email issue
+4. **The database** stores everything encrypted, keeps data only as long as needed, and is tuned for fast reads on conversations and messages
 
 </details>
 
@@ -244,22 +245,20 @@ Send automated messages into any conversation from your CI/CD, monitoring, or au
   <img src="image/logo_axomind.png" alt="Axomind Logo" width="150"/>
 </div>
 
-**Axomind** is the **next evolution** of the AuroriaLink project, currently **under active development**. It will be an all-in-one contextual team management ecosystem integrating three interconnected modules:
-- **🗓️ Task Scheduling** - Timeline-based project planning
-- **🧠 Idea Structuring** - Mindmap-based knowledge organization
-- **💬 Communication** - Real-time team messaging
+**Axomind** is a broader project that builds on AuroriaLink. It brings together three connected modules:
+- **🗓️ Project planning** — Timeline-based Gantt
+- **🧠 Mind maps** — For ideas and knowledge
+- **💬 Messaging** — AuroriaLink, integrated as the communication layer
 
-The fundamental principle of Axomind is **contextual linking**: each conversation will be intrinsically linked to tasks, mindmap nodes, or other production elements. AuroriaLink will be integrated as the communication module, enabling this contextual approach to solve the desynchronization between communication and production tools by unifying all aspects of team collaboration into a single workflow.
-
-AuroriaLink is currently released as a **standalone messaging application** while Axomind is being developed.
+The core idea behind Axomind is **contextual linking**: each conversation is attached to a task or a mind map node, so the discussion and the work it relates to stay in the same place. AuroriaLink remains available as a **standalone messaging app** for people who only need the chat side.
 
 ### Custom Modular Framework
 
-Both AuroriaLink and Axomind are built upon a **custom modular Flutter framework**, designed around these strict principles:
-* **Modularity**: Each component (UI, logic, services) is independent
-* **Interoperability**: Components interact dynamically without rigid dependencies
-* **Adaptability**: Behavior adjusts based on context (user, platform)
-* **Separation of Concerns**: Strict partitioning between business logic, UI, data, and configuration
+Both AuroriaLink and Axomind run on a **custom modular framework** built around a few simple rules:
+* **Modular** — the interface, the logic, and the services stay independent of one another
+* **Flexible** — pieces work together without being tied together
+* **Context-aware** — the app adapts to the user and the device
+* **Clean layers** — interface, logic, data, and settings each live in their own layer
 
 <div align="center">
   <a href="https://github.com/Sebastien-VZN/axomind"><img src="https://img.shields.io/badge/Axomind-Repository-3423A6?style=for-the-badge&logo=github&logoColor=white" alt="Axomind Repository"/></a>
@@ -269,7 +268,7 @@ Both AuroriaLink and Axomind are built upon a **custom modular Flutter framework
 
 ## 🤝 Contributing & Feedback
 
-As a beta version, this project thrives on community feedback. If you encounter a bug, have a feature request, or want to contribute, please feel free to open an issue on the repository.
+This is a beta. If you run into a bug, have a feature suggestion, or want to contribute, open an issue on the repository — feedback is read and acted on.
 
 ---
 
@@ -296,9 +295,11 @@ As a beta version, this project thrives on community feedback. If you encounter 
 
 ### ⚠️ Statut du projet : Version Beta
 
-> Ce projet est actuellement en phase de développement actif. Des bugs et des comportements inattendus sont donc probables. Les contributions et retours d'expérience sont les bienvenus.
+> Ce projet est en développement actif. Des bugs et comportements inattendus sont probables. Les retours sont bienvenus.
 
-> **📧 Limitation email :** Pensez également à vérifier vos spams si vous ne recevez pas l'email de vérification.
+> **📧 À propos des emails**
+> Le serveur est autohébergé, et mon fournisseur d'accès bloque actuellement l'envoi des emails depuis ce serveur. **Tout ce qui dépend de l'email est donc désactivé pour le moment** — vérification de compte, réinitialisation de mot de passe et double authentification. Les comptes fonctionnent sans étape email.
+> Toute la couche email est intégrée et pourra être réactivée dès que le problème sera réglé — rien d'autre ne change pour vous.
 
 ---
 
@@ -354,22 +355,22 @@ As a beta version, this project thrives on community feedback. If you encounter 
 ### ✨ Fonctionnalités Clés
 
 **🔒 Confidentialité & Sécurité**
-- 🔒 **Chiffrement Complet** — Messages et fichiers chiffrés sur le serveur et en transit. Vos conversations restent privées.
-- 🛡️ **Protection 2FA** — Authentification à deux facteurs par email (code PIN 6 chiffres), avec protection contre le brute force et le tracking IP
-- 🔐 **Contrôle d'Accès** — Chaque membre n'accède qu'à ce à quoi il est autorisé, avec des permissions par rôle
+- 🔒 **Chiffrement fort** — Messages et fichiers chiffrés en AES-256-GCM, à la fois sur le serveur et lors de l'envoi. Vos conversations restent privées.
+- 🛡️ **Double authentification (intégrée, off pour l'instant)** — Code par email à la connexion, avec détection des tentatives suspectes. Conçue pour être activée ou désactivée facilement — actuellement désactivée à cause du problème d'email ci-dessus.
+- 🔐 **Contrôle d'Accès** — Chaque membre ne voit que ce à quoi il est autorisé, avec des permissions par rôle
 
 **⚡ Temps Réel**
-- ⚡ **Livraison Instantanée** — Les messages arrivent en temps réel, avec reconnexion automatique en cas de coupure réseau
-- 📱 **Multi-Appareils** — Restez connecté depuis votre bureau et votre mobile en même temps (jusqu'à 2 appareils)
+- ⚡ **Livraison Instantanée** — Les messages arrivent en direct, avec reconnexion automatique en cas de coupure
+- 📱 **Multi-Appareils** — Restez connecté sur **2 appareils pour AuroriaLink** (1 desktop + 1 mobile). Si vous utilisez aussi Axomind, vous disposez de **2 sessions supplémentaires en parallèle** — jusqu'à 4 sessions actives au total par compte, par design
 
 **💬 Messagerie**
 - 👥 **Canaux Privés** — Des espaces dédiés pour vos équipes, projets ou sujets
 - 🎤 **Messages Audio** — Enregistrez et envoyez des clips vocaux dans vos conversations
 - 📎 **Partage de Fichiers** — Jusqu'à 10 fichiers par message (documents, images, vidéos, audio — 10 Mo chacun)
-- ⏱️ **Rétention Intelligente** — Messages conservés 1 an sur le serveur / 2 ans en local, avec suppression automatique optionnelle après 24h · Fichiers conservés 1 mois (3 mois si épinglé)
+- ⏱️ **Rétention** — Messages conservés 1 an sur le serveur / 2 ans en local, avec suppression automatique optionnelle après 24h · Fichiers conservés 1 mois (3 mois si épinglé)
 
 **🧩 Intégrations**
-- 🤖 **API Bot** — Connectez vos outils : CI/CD, monitoring, plateformes d'automatisation (n8n, Make, Zapier...)
+- 🤖 **API Bot** — Envoyez des messages depuis vos outils CI/CD, monitoring ou plateformes d'automatisation (n8n, Make, Zapier...)
 - 🔗 **Lien Contextuel** — Associez des conversations à vos projets, tâches ou ressources externes
 
 ---
@@ -388,11 +389,11 @@ As a beta version, this project thrives on community feedback. If you encounter 
   <a href="https://www.debian.org/" target="_blank"><img src="https://img.shields.io/badge/Debian-13-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian 13"/></a>
 </p>
 
-**Fonctionnement :**
-1. Le **Client** se connecte via HTTPS pour auth/données et WSS pour la messagerie temps réel
-2. Le **Serveur WebSocket** gère la communication bidirectionnelle instantanée avec heartbeat (30s) et support multi-device (max 2 connexions)
-3. Le **Backend** gère 5 couches de sécurité (validation routes, brute force, 2FA, AES-256-GCM, multi-device), avec cache RAM 4 niveaux pour des performances optimales
-4. La **Base de données** stocke les données chiffrées avec politiques de rétention intelligentes et index optimisés pour des requêtes rapides
+**Fonctionnement (en clair) :**
+1. **L'application** dialogue avec le serveur via une connexion sécurisée (HTTPS), et un canal temps réel séparé garde tout synchronisé en direct
+2. **Le canal temps réel** peut maintenir 2 sessions ouvertes pour AuroriaLink (1 desktop + 1 mobile). Le même design supporte 2 sessions supplémentaires pour Axomind en parallèle — 4 sessions actives au total par compte
+3. **Le serveur** protège les comptes sur plusieurs niveaux : vérifications des accès, protection contre les attaques, chiffrement AES-256-GCM, et un jeton unique par session. La double authentification est intégrée et indépendante du flux de connexion normal — désactivée pour l'instant à cause du problème d'email
+4. **La base de données** stocke tout de façon chiffrée, ne conserve les données que le temps utile, et est optimisée pour des lectures rapides sur les conversations et les messages
 
 </details>
 
@@ -438,22 +439,20 @@ Envoyez des messages automatisés dans vos conversations depuis vos outils CI/CD
   <img src="image/logo_axomind.png" alt="Logo Axomind" width="150"/>
 </div>
 
-**Axomind** est **l'évolution future** du projet AuroriaLink, actuellement **en développement actif**. Ce sera un écosystème de gestion d'équipe contextuel tout-en-un intégrant trois modules interconnectés :
-- **🗓️ Planification de tâches** - Gestion de projets basée sur une chronologie
-- **🧠 Structuration d'idées** - Organisation des connaissances par mindmap
-- **💬 Communication** - Messagerie d'équipe temps réel
+**Axomind** est un projet plus large qui s'appuie sur AuroriaLink. Il réunit trois modules connectés :
+- **🗓️ Planification** — Diagramme Gantt sur une chronologie
+- **🧠 Cartes mentales** — Pour les idées et les connaissances
+- **💬 Messagerie** — AuroriaLink, intégré comme couche de communication
 
-Le principe fondamental d'Axomind est le **lien contextuel** : chaque conversation sera intrinsèquement liée aux tâches, nœuds de mindmap, ou autres éléments de production. AuroriaLink sera intégré comme module de communication, permettant cette approche contextuelle pour résoudre la désynchronisation entre les outils de communication et de production en unifiant tous les aspects de la collaboration d'équipe dans un flux de travail unique.
-
-AuroriaLink est actuellement publié comme **application de messagerie autonome** pendant le développement d'Axomind.
+L'idée centrale d'Axomind est le **lien contextuel** : chaque conversation est rattachée à une tâche ou à un nœud de carte mentale, pour que la discussion et le travail qui s'y rapporte restent au même endroit. AuroriaLink reste disponible comme **application de messagerie autonome** pour celles et ceux qui n'ont besoin que de la partie chat.
 
 ### Framework Modulaire Personnalisé
 
-AuroriaLink et Axomind sont construits sur un **framework Flutter modulaire personnalisé**, conçu selon ces principes stricts :
-* **Modularité** : Chaque composant (UI, logique, services) est indépendant
-* **Interopérabilité** : Les composants interagissent dynamiquement sans dépendances rigides
-* **Adaptabilité** : Le comportement s'ajuste en fonction du contexte (utilisateur, plateforme)
-* **Séparation des responsabilités** : Cloisonnement strict entre logique métier, UI, données et configuration
+AuroriaLink et Axomind reposent sur un **framework modulaire personnalisé**, conçu autour de quelques règles simples :
+* **Modulaire** — l'interface, la logique et les services restent indépendants
+* **Souple** — les éléments collaborent sans être figés ensemble
+* **Adapté au contexte** — l'application s'ajuste à l'utilisateur et à l'appareil
+* **Couches nettes** — interface, logique, données et réglages vivent chacun dans leur propre couche
 
 <div align="center">
   <a href="https://github.com/Sebastien-VZN/axomind"><img src="https://img.shields.io/badge/Axomind-Dépôt-3423A6?style=for-the-badge&logo=github&logoColor=white" alt="Dépôt Axomind"/></a>

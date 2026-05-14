@@ -41,11 +41,11 @@
 
 ### Step 1: Download the Archive
 
-Download the `linux.tar.gz` archive from [the releases page](https://github.com/Sebastien-VZN/auroria_link/releases).
+Download the `AuroriaLink_X.X.X.tar.gz` archive from [the releases page](https://github.com/Sebastien-VZN/auroria_link/releases).
 
 ```bash
 # Example extraction
-tar -xzf linux.tar.gz
+tar -xzf AuroriaLink_X.X.X.tar.gz
 cd build/linux/x64/release/bundle/
 ```
 
@@ -504,7 +504,7 @@ sudo apt install -y \
 
 ---
 
-**Last updated:** 2026-03-03
+**Last updated:** 2026-05-14
 
 ---
 
@@ -552,11 +552,11 @@ sudo apt install -y \
 
 ### Étape 1 : Télécharger l'archive
 
-Téléchargez l'archive `linux.tar.gz` depuis [les releases](https://github.com/Sebastien-VZN/auroria_link/releases).
+Téléchargez l'archive `AuroriaLink_X.X.X.tar.gz` depuis [les releases](https://github.com/Sebastien-VZN/auroria_link/releases).
 
 ```bash
 # Exemple d'extraction
-tar -xzf linux.tar.gz
+tar -xzf AuroriaLink_X.X.X.tar.gz
 cd build/linux/x64/release/bundle/
 ```
 
@@ -1015,6 +1015,6 @@ sudo apt install -y \
 
 ---
 
-**Dernière mise à jour :** 2026-03-03
+**Dernière mise à jour :** 2026-05-14
 
 </details>
