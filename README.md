@@ -72,7 +72,7 @@
 - [📊 Performance & Real Cost](#-performance--real-cost)
 - [🤖 Bot API](#-bot-api)
 - [🌐 About Axomind](#-about-axomind)
-- [🤝 Contributing & Feedback](#-contributing--feedback)
+- [🤝 Bug Reports & Feedback](#-bug-reports--feedback)
 - [👤 Author](#-author)
 - [🇫🇷 Version Française](#-version-française)
 
@@ -83,8 +83,8 @@
 > This project is in active development. Bugs and unexpected behaviors are likely. Feedback is welcome.
 
 > **📧 About emails**
-> The server is self-hosted, and my internet provider currently blocks it from sending emails. So **everything that would normally rely on email is switched off for now** — account verification, password reset, and two-factor authentication. Accounts work without any email step.
-> The whole email layer is built in and can be turned back on as soon as the problem is fixed — nothing else changes for you.
+> Outbound mail from the self-hosted server is blocked at the ISP level, and alternative relays haven't given reliable delivery for this setup. So **everything that would normally rely on email is switched off for now** — account verification, password reset, and two-factor authentication. Accounts work without any email step.
+> The email layer is built in and decoupled from the regular login flow. It will be turned back on once the platform moves to a hosting provider with reliable outbound mail — nothing else will change for you.
 
 ---
 
@@ -233,18 +233,18 @@ Choose your platform for detailed installation instructions:
 
 ## 📊 Performance & Real Cost
 
-A short, honest look at what the entire platform runs on, what it actually handles under load, and what the same capacity would cost on a major cloud provider. **Every number below was measured, not estimated.**
+A factual overview of the hardware running the platform, the measured load it handles, and the equivalent cost on a major cloud provider. Every number below was measured on the production server on 2026-05-12.
 
-This section covers the shared infrastructure that powers both AuroriaLink and Axomind — the hardware, the latencies, and the costs are the same for both.
+The same infrastructure powers AuroriaLink and Axomind, so the hardware, latencies and costs apply to both.
 
-### The hardware
+### Hardware
 
-The whole stack runs on a single refurbished mini-PC sitting on a shelf at home. No data center, no cloud — just one small box handling real-time messaging, planning, and mind maps together.
+The full stack runs on a single refurbished mini-PC.
 
 <p align="center">
   <img src="image/server.jpg" alt="The server running AuroriaLink and Axomind" width="55%"/>
   <br/>
-  <sub><em>The production server. Yes, that's it.</em></sub>
+  <sub><em>Production server</em></sub>
 </p>
 
 | Item | Value |
@@ -252,33 +252,37 @@ The whole stack runs on a single refurbished mini-PC sitting on a shelf at home.
 | Machine | Refurbished business mini-PC (Intel i5, ~2013) |
 | CPU / RAM | 2 cores, 4 threads · 16 GB |
 | Storage | SSD |
-| Energy class | 35 W TDP |
+| Power envelope | 35 W TDP |
 | Form factor | 17 × 17 × 3.4 cm |
 | Purchase price | ~100 € (second-hand) |
-| Electricity | **~8 €/month** |
+| Electricity | ~8 €/month |
 
 ### Measured under load
 
-Two synthetic load tests, replayed against the production server on 2026-05-12.
+Two synthetic load tests, replayed against the production server. Each test originated from a single client IP, which is a worse condition than real distributed traffic.
 
-**Messaging — 3,691 requests, 200 concurrent users in a burst:**
+**Messaging — 3,691 requests, 200 concurrent users in burst:**
 
 | Metric | Value |
 |---|---|
-| Failures | **0** |
-| Median response time | **109 ms** |
+| Failures | 0 |
+| Median (p50) | 109 ms |
+| 95th percentile | 196 ms |
 | 99th percentile | 240 ms |
+| Total duration | 120 s |
 
-**Planning, mind maps and activities — 5,255 requests, 200 concurrent users in a burst:**
+**Planning, mind maps and activities (shared backend) — 5,255 requests, 200 concurrent users in burst:**
 
 | Metric | Value |
 |---|---|
-| Failures | **0** |
-| Median response time | **78 ms** |
+| Failures | 0 |
+| Median (p50) | 78 ms |
 | 95th percentile | 197 ms |
 | 99th percentile | 568 ms |
+| Throughput | ~29 req/s |
+| Total duration | 183 s |
 
-The hardware was never the bottleneck — CPU peaked at around 80 % per core under the worst burst, and memory and disk stayed comfortable.
+CPU peaked around 80 % per core during the burst; memory and disk usage remained well within limits.
 
 <p align="center">
   <img src="image/test_de_charge.jpg" alt="Server load metrics during burst test" width="55%"/>
@@ -291,37 +295,45 @@ The hardware was never the bottleneck — CPU peaked at around 80 % per core und
 | Profile | Capacity |
 |---|---|
 | Concurrent active users (normal usage) | ~600 |
-| Total daily users (with realistic turnover) | **~2,000** |
+| Total daily users (with realistic turnover) | ~2,000 |
 
-In normal usage, a typical active user creates only one or two small requests per minute. The app keeps its own local copy of the data and only asks the server for what has actually changed since the last sync.
+In normal usage, an active user generates roughly one to two small requests per minute. The client keeps a local copy of the data and only asks the server for what has changed since the last sync, which lowers the real request volume by an order of magnitude compared to the burst test.
 
-### What the same capacity would cost on AWS
+### Cost comparison
 
 | Setup | Per month | Per year | Over 5 years |
 |---|---:|---:|---:|
-| **AuroriaLink, self-hosted (current capacity)** | **~8 €** | ~96 € | **~480 €** |
+| Self-hosted (current capacity) | ~8 € | ~96 € | ~480 € |
 | AWS equivalent (t3.large / m5.large class) | ~60–70 € | ~720–840 € | ~3,600–4,200 € |
-| **Self-hosted, scaled to ~15,000 concurrent users** | **~30 €** | ~360 € | ~1,800 € |
+| Self-hosted, scaled to ~15,000 concurrent users | ~30 € | ~360 € | ~1,800 € |
 | AWS equivalent at that scale | ~600 € | ~7,200 € | ~36,000 € |
 
-→ Across both scenarios, **roughly 85–95 % less than the same capacity on a major cloud provider.**
+Across both scenarios, the self-hosted setup runs at roughly 85–95 % below the cost of the equivalent managed instance.
 
-### Why the small box is enough
+### Architecture choices that keep the load low
 
-A few simple architectural choices keep the server's job light:
+- The client keeps a local copy of the data and reads it directly; the server is only contacted for what has actually changed since the last sync.
+- An in-memory cache sits in front of the database, so most reads never reach the disk.
+- Deletions are propagated as small markers, so clients clean up locally without a full re-sync.
+- Result: an active user generates roughly one to two small requests per minute, not a continuous stream.
 
-- **The app keeps a local copy of your data**, so it can be used immediately and the server is only contacted for what has changed since the last sync.
-- **In-memory caching** sits in front of the database, so most reads never hit the disk.
-- **Deletions are propagated as small markers** — clients clean up locally without a full re-sync.
-- The result: a typical active user generates one or two small requests per minute, not a continuous stream.
+### Encryption at rest (observable)
 
-### Reproducible and observable
+Sensitive text fields (message bodies, conversation titles, planning entries, mind map nodes) are encrypted with AES-256-GCM before being written to the database. Even with direct SQL access to the production database, the stored values are ciphertext — the plain text is never visible at the storage layer.
+
+<p align="center">
+  <img src="image/cryptage_bdd.jpg" alt="Encrypted columns visible in a SQL client connected to the production database" width="80%"/>
+  <br/>
+  <sub><em>Direct SQL view of the shared production database — title and description columns hold ciphertext only.</em></sub>
+</p>
+
+### Reproducibility and observability
 
 - The load tests are scripted and can be re-run on demand against the production server.
 - Server health is monitored live (CPU, memory, cache hit rate).
-- The client and server come with an automated test suite (~500 integration tests total), benchmark scripts for server-side load, and DevTools-based profiling on the client side to measure CPU, GPU and memory impact on the user experience. Build pipelines run on every change.
+- The codebase includes 294 client-side integration tests and 400+ CI/CD pipelines that run on every change, plus benchmark scripts for server-side load and DevTools-based profiling on the client side (CPU, GPU, memory).
 
-> Nothing in this section is marketing extrapolation. The cost is a realistic estimate based on the hardware's power draw; the latencies are what the load tests produced.
+> The cost is a realistic estimate based on the hardware's measured power draw; the latencies are what the load tests produced.
 
 ---
 
@@ -364,9 +376,11 @@ Both AuroriaLink and Axomind run on a **custom modular framework** built around 
 
 ---
 
-## 🤝 Contributing & Feedback
+## 🤝 Bug Reports & Feedback
 
-This is a beta. If you run into a bug, have a feature suggestion, or want to contribute, open an issue on the repository — feedback is read and acted on.
+AuroriaLink is in beta. Bug reports, feature ideas and general feedback are welcome — open an issue on the repository, every entry is read and considered.
+
+The application source code is proprietary and kept private as a deliberate security choice. This public repository contains the documentation, install guides and release builds — not the codebase. External code contributions aren't part of the project model.
 
 ---
 
@@ -396,8 +410,8 @@ This is a beta. If you run into a bug, have a feature suggestion, or want to con
 > Ce projet est en développement actif. Des bugs et comportements inattendus sont probables. Les retours sont bienvenus.
 
 > **📧 À propos des emails**
-> Le serveur est autohébergé, et mon fournisseur d'accès bloque actuellement l'envoi des emails depuis ce serveur. **Tout ce qui dépend de l'email est donc désactivé pour le moment** — vérification de compte, réinitialisation de mot de passe et double authentification. Les comptes fonctionnent sans étape email.
-> Toute la couche email est intégrée et pourra être réactivée dès que le problème sera réglé — rien d'autre ne change pour vous.
+> L'envoi de mails sortants depuis le serveur autohébergé est bloqué au niveau du FAI, et les relais alternatifs n'ont pas donné de livraison fiable dans cette configuration. **Tout ce qui dépend de l'email est donc désactivé pour le moment** — vérification de compte, réinitialisation de mot de passe et double authentification. Les comptes fonctionnent sans étape email.
+> La couche email est intégrée et découplée du flux de connexion normal. Elle sera réactivée quand la plateforme passera chez un provider d'hébergement où l'envoi sortant est fiable — rien d'autre ne changera pour vous.
 
 ---
 
@@ -524,18 +538,18 @@ Choisissez votre plateforme pour des instructions détaillées :
 
 ## 📊 Performance & Coût Réel
 
-Un regard honnête sur ce qui fait tourner toute la plateforme, ce qu'elle encaisse vraiment sous charge, et ce que la même capacité coûterait sur un gros fournisseur cloud. **Chaque chiffre ci-dessous a été mesuré, pas estimé.**
+Aperçu factuel du matériel qui fait tourner la plateforme, de la charge mesurée et du coût équivalent chez un gros fournisseur cloud. Tous les chiffres ci-dessous ont été mesurés sur le serveur de production le 12 mai 2026.
 
-Cette section couvre l'infrastructure partagée qui fait tourner à la fois AuroriaLink et Axomind — le hardware, les latences et les coûts sont les mêmes pour les deux.
+La même infrastructure fait tourner AuroriaLink et Axomind, donc le matériel, les latences et les coûts s'appliquent aux deux.
 
-### Le hardware
+### Matériel
 
-Toute la stack tourne sur un seul mini-PC reconditionné posé sur une étagère à la maison. Pas de datacenter, pas de cloud — juste une petite boîte qui gère la messagerie temps réel, le planning et les cartes mentales ensemble.
+L'ensemble de la stack tourne sur un seul mini-PC reconditionné.
 
 <p align="center">
   <img src="image/server.jpg" alt="Le serveur qui fait tourner AuroriaLink et Axomind" width="55%"/>
   <br/>
-  <sub><em>Le serveur de production. Oui, c'est ça.</em></sub>
+  <sub><em>Serveur de production</em></sub>
 </p>
 
 | Élément | Valeur |
@@ -543,33 +557,37 @@ Toute la stack tourne sur un seul mini-PC reconditionné posé sur une étagère
 | Machine | Mini-PC de bureau reconditionné (Intel i5, ~2013) |
 | CPU / RAM | 2 cœurs, 4 threads · 16 Go |
 | Stockage | SSD |
-| Classe énergétique | 35 W TDP |
+| Enveloppe énergétique | 35 W TDP |
 | Format | 17 × 17 × 3,4 cm |
 | Prix d'achat | ~100 € (occasion) |
-| Électricité | **~8 €/mois** |
+| Électricité | ~8 €/mois |
 
 ### Mesuré sous charge
 
-Deux tests de charge synthétiques, rejoués contre le serveur de production le 12 mai 2026.
+Deux tests de charge synthétiques, rejoués contre le serveur de production. Chaque test était émis depuis une seule IP cliente, ce qui est une condition plus défavorable qu'un trafic réel distribué.
 
 **Messagerie — 3 691 requêtes, 200 utilisateurs simultanés en burst :**
 
 | Métrique | Valeur |
 |---|---|
-| Échecs | **0** |
-| Temps de réponse médian | **109 ms** |
+| Échecs | 0 |
+| Médiane (p50) | 109 ms |
+| 95e percentile | 196 ms |
 | 99e percentile | 240 ms |
+| Durée totale | 120 s |
 
-**Planning, cartes mentales et activités — 5 255 requêtes, 200 utilisateurs simultanés en burst :**
+**Planning, cartes mentales et activités (backend partagé) — 5 255 requêtes, 200 utilisateurs simultanés en burst :**
 
 | Métrique | Valeur |
 |---|---|
-| Échecs | **0** |
-| Temps de réponse médian | **78 ms** |
+| Échecs | 0 |
+| Médiane (p50) | 78 ms |
 | 95e percentile | 197 ms |
 | 99e percentile | 568 ms |
+| Débit | ~29 req/s |
+| Durée totale | 183 s |
 
-Le hardware n'a jamais été le facteur limitant — le CPU a culminé à environ 80 % par cœur sous le pire burst, et la mémoire comme le disque sont restés confortables.
+Le CPU a culminé à environ 80 % par cœur pendant le burst ; mémoire et disque sont restés largement sous leurs limites.
 
 <p align="center">
   <img src="image/test_de_charge.jpg" alt="Métriques serveur pendant le test de charge" width="55%"/>
@@ -582,37 +600,45 @@ Le hardware n'a jamais été le facteur limitant — le CPU a culminé à enviro
 | Profil | Capacité |
 |---|---|
 | Utilisateurs actifs simultanés (usage normal) | ~600 |
-| Total utilisateurs par jour (avec rotation réaliste) | **~2 000** |
+| Total utilisateurs par jour (avec rotation réaliste) | ~2 000 |
 
-En usage normal, un utilisateur actif génère seulement une ou deux petites requêtes par minute. L'application garde sa propre copie locale des données et ne demande au serveur que ce qui a effectivement changé depuis sa dernière synchronisation.
+En usage normal, un utilisateur actif génère environ une à deux petites requêtes par minute. Le client garde une copie locale des données et ne demande au serveur que ce qui a changé depuis la dernière synchronisation, ce qui réduit le volume réel de requêtes d'un ordre de grandeur par rapport au burst test.
 
-### Ce que la même capacité coûterait sur AWS
+### Comparaison de coût
 
 | Configuration | Par mois | Par an | Sur 5 ans |
 |---|---:|---:|---:|
-| **AuroriaLink, autohébergé (capacité actuelle)** | **~8 €** | ~96 € | **~480 €** |
+| Autohébergé (capacité actuelle) | ~8 € | ~96 € | ~480 € |
 | Équivalent AWS (classe t3.large / m5.large) | ~60–70 € | ~720–840 € | ~3 600–4 200 € |
-| **Autohébergé, monté à ~15 000 utilisateurs simultanés** | **~30 €** | ~360 € | ~1 800 € |
+| Autohébergé, monté à ~15 000 utilisateurs simultanés | ~30 € | ~360 € | ~1 800 € |
 | Équivalent AWS à cette échelle | ~600 € | ~7 200 € | ~36 000 € |
 
-→ Sur les deux scénarios, **environ 85–95 % de moins que la même capacité sur un gros fournisseur cloud.**
+Sur les deux scénarios, la configuration autohébergée tourne à environ 85–95 % en dessous du coût de l'instance gérée équivalente.
 
-### Pourquoi la petite boîte suffit
+### Choix d'architecture qui maintiennent la charge basse
 
-Quelques choix d'architecture simples gardent le travail du serveur léger :
+- Le client garde une copie locale des données et la lit directement ; le serveur n'est contacté que pour ce qui a effectivement changé depuis la dernière synchronisation.
+- Un cache en mémoire vive est placé devant la base de données, donc la plupart des lectures ne touchent jamais le disque.
+- Les suppressions sont propagées sous forme de petits marqueurs : les clients nettoient en local sans re-synchronisation complète.
+- Résultat : un utilisateur actif génère environ une à deux petites requêtes par minute, pas un flux continu.
 
-- **L'application garde une copie locale de vos données**, pour qu'elles soient disponibles immédiatement — le serveur n'est contacté que pour ce qui a changé depuis la dernière synchronisation.
-- **Un cache en mémoire vive** est placé devant la base de données, pour que la plupart des lectures ne touchent jamais le disque.
-- **Les suppressions sont propagées sous forme de petits marqueurs** — les clients nettoient en local sans re-synchronisation complète.
-- Résultat : un utilisateur actif génère une ou deux petites requêtes par minute, pas un flux continu.
+### Chiffrement au repos (observable)
 
-### Reproductible et observable
+Les champs texte sensibles (contenu des messages, titres de conversations, entrées de planning, nœuds de cartes mentales) sont chiffrés en AES-256-GCM avant d'être écrits en base de données. Même avec un accès SQL direct à la base de production, les valeurs stockées sont du chiffré — le texte clair n'apparaît jamais à la couche stockage.
+
+<p align="center">
+  <img src="image/cryptage_bdd.jpg" alt="Colonnes chiffrées visibles dans un client SQL connecté à la base de production" width="80%"/>
+  <br/>
+  <sub><em>Vue SQL directe de la base de production partagée — les colonnes titre et description ne contiennent que du chiffré.</em></sub>
+</p>
+
+### Reproductibilité et observabilité
 
 - Les tests de charge sont scriptés et peuvent être rejoués à la demande contre le serveur de production.
 - La santé du serveur est surveillée en direct (CPU, mémoire, taux de hit du cache).
-- Le client et le serveur sont livrés avec une suite de tests automatisés (~500 tests d'intégration au total), des scripts de benchmark côté serveur, et des mesures de profil via DevTools côté client pour évaluer l'impact CPU, GPU et mémoire sur l'expérience utilisateur. Les pipelines de build tournent à chaque changement.
+- Le code embarque 294 tests d'intégration côté client et 400+ pipelines CI/CD qui tournent à chaque changement, plus des scripts de benchmark côté serveur et du profiling via DevTools côté client (CPU, GPU, mémoire).
 
-> Rien dans cette section n'est une extrapolation marketing. Le coût est une estimation réaliste basée sur la consommation électrique du hardware ; les latences sont ce que les tests de charge ont produit.
+> Le coût est une estimation réaliste basée sur la consommation électrique mesurée du matériel ; les latences sont les valeurs produites par les tests de charge.
 
 ---
 
@@ -652,6 +678,14 @@ AuroriaLink et Axomind reposent sur un **framework modulaire personnalisé**, co
 <div align="center">
   <a href="https://github.com/Sebastien-VZN/axomind"><img src="https://img.shields.io/badge/Axomind-Dépôt-3423A6?style=for-the-badge&logo=github&logoColor=white" alt="Dépôt Axomind"/></a>
 </div>
+
+---
+
+## 🤝 Bugs & Retours
+
+AuroriaLink est en beta. Les remontées de bugs, suggestions et retours d'usage sont les bienvenus — ouvrez une issue sur le dépôt, chaque entrée est lue et étudiée.
+
+Le code source de l'application est propriétaire et reste privé par choix de sécurité. Ce dépôt public contient la documentation, les guides d'installation et les builds de release — pas le code de l'application. Les contributions de code externes ne font pas partie du modèle du projet.
 
 </details>
 
