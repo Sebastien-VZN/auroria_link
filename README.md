@@ -8,8 +8,12 @@
   </p>
 
   <p align="center">
-    <img src="https://img.shields.io/badge/Version-0.10.4%20(35)-blueviolet?style=flat-square&logo=github" alt="Version"/>
-    <img src="https://img.shields.io/badge/Release%20Date-2026--05--14-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+    <img src="https://img.shields.io/badge/Version-0.10.5%20(36)-blueviolet?style=flat-square&logo=github" alt="Version"/>
+    <img src="https://img.shields.io/badge/Release%20Date-2026--05--26-blue?style=flat-square&logo=calendar" alt="Release Date"/>
+  </p>
+
+  <p align="center">
+    <a href="#-version-française"><img src="https://img.shields.io/badge/🇫🇷-Lire_en_français-blue?style=flat-square" alt="Lire en français"/></a>
   </p>
 </div>
 
@@ -472,6 +476,77 @@ The application source code is proprietary and kept private as a deliberate secu
 
 ---
 
+## 🎨 Galerie
+
+### 💻 Expérience Desktop
+
+<p align="center">
+  <img src="image/desktop_1.jpg" alt="Capture desktop 1" width="49%"/>
+  <img src="image/desktop_2.jpg" alt="Capture desktop 2" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_3.jpg" alt="Capture desktop 3" width="49%"/>
+  <img src="image/desktop_4.jpg" alt="Capture desktop 4" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_5.jpg" alt="Capture desktop 5" width="49%"/>
+  <img src="image/desktop_6.jpg" alt="Capture desktop 6" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_7.jpg" alt="Capture desktop 7" width="49%"/>
+  <img src="image/desktop_8.jpg" alt="Capture desktop 8" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_9.jpg" alt="Capture desktop 9" width="49%"/>
+  <img src="image/desktop_10.jpg" alt="Capture desktop 10" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_11.jpg" alt="Capture desktop 11" width="49%"/>
+  <img src="image/desktop_12.jpg" alt="Capture desktop 12" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_13.jpg" alt="Capture desktop 13" width="49%"/>
+  <img src="image/desktop_14.jpg" alt="Capture desktop 14" width="49%"/>
+</p>
+
+<p align="center">
+  <img src="image/desktop_15.jpg" alt="Capture desktop 15" width="49%"/>
+</p>
+
+### 📱 Expérience Mobile
+
+<p align="center">
+  <img src="image/mobil_0.jpg" alt="Capture mobile 0" width="19%"/>
+  <img src="image/mobil_1.jpg" alt="Capture mobile 1" width="19%"/>
+  <img src="image/mobil_2.jpg" alt="Capture mobile 2" width="19%"/>
+  <img src="image/mobil_3.jpg" alt="Capture mobile 3" width="19%"/>
+  <img src="image/mobil_4.jpg" alt="Capture mobile 4" width="19%"/>
+</p>
+
+<p align="center">
+  <img src="image/mobil_5.jpg" alt="Capture mobile 5" width="19%"/>
+  <img src="image/mobil_5.png" alt="Capture mobile 5 (alt)" width="19%"/>
+  <img src="image/mobil_6.jpg" alt="Capture mobile 6" width="19%"/>
+  <img src="image/mobil_7.jpg" alt="Capture mobile 7" width="19%"/>
+  <img src="image/mobil_8.jpg" alt="Capture mobile 8" width="19%"/>
+</p>
+
+<p align="center">
+  <img src="image/mobil_9.jpg" alt="Capture mobile 9" width="19%"/>
+  <img src="image/mobil_10.jpg" alt="Capture mobile 10" width="19%"/>
+  <img src="image/mobil_11.jpg" alt="Capture mobile 11" width="19%"/>
+  <img src="image/mobil_12.jpg" alt="Capture mobile 12" width="19%"/>
+  <img src="image/mobil_13.jpg" alt="Capture mobile 13" width="19%"/>
+</p>
+
+---
+
 ## 📊 Performance & Coût Réel
 
 Aperçu factuel du matériel qui fait tourner la plateforme, de la charge mesurée et du coût équivalent chez un gros fournisseur cloud. Tous les chiffres ci-dessous ont été mesurés sur le serveur de production le 12 mai 2026.
@@ -621,6 +696,14 @@ AuroriaLink et Axomind reposent sur un **framework modulaire personnalisé**, co
 AuroriaLink est en beta. Les remontées de bugs, suggestions et retours d'usage sont les bienvenus — ouvrez une issue sur le dépôt, chaque entrée est lue et étudiée.
 
 Le code source de l'application est propriétaire et reste privé par choix de sécurité. Ce dépôt public contient la documentation, les guides d'installation et les builds de release — pas le code de l'application. Les contributions de code externes ne font pas partie du modèle du projet.
+
+---
+
+## 👤 Auteur
+
+<div align="center">
+  <a href="https://sebastien-vezzani.xyz/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-3423A6?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Lien vers le Portfolio"/></a>
+</div>
 
 </details>
 
