@@ -13,8 +13,6 @@
   </p>
 </div>
 
-**AuroriaLink** — private encrypted messaging for teams. Group channels, file sharing, 26 themes (light + dark), zero tracking.
-
 ---
 
 ## 🚀 Get the Latest Version
@@ -67,7 +65,6 @@
 - [⚠️ Project Status](#️-project-status-beta-version)
 - [✨ Key Features](#-key-features)
 - [💻 Supported Platforms](#-supported-platforms)
-- [🚀 Installation](#-installation)
 - [🎨 Gallery](#-gallery)
 - [📊 Performance & Real Cost](#-performance--real-cost)
 - [🤖 Bot API](#-bot-api)
@@ -78,7 +75,7 @@
 
 ---
 
-### ⚠️ Project Status: Beta Version
+## ⚠️ Project Status: Beta Version
 
 > This project is in active development. Bugs and unexpected behaviors are likely. Feedback is welcome.
 
@@ -88,11 +85,11 @@
 
 ---
 
-### ✨ Key Features
+## ✨ Key Features
 
 **🔒 Privacy & Security**
 - 🔒 **Strong Encryption** — Messages and files are encrypted with AES-256-GCM, both when stored on the server and while being sent. Your conversations stay private.
-- 🛡️ **Two-factor authentication (built in, off for now)** — Email code at login, with anti-spam and bad-attempt detection. Designed to be switched on or off easily — currently off because of the email issue above.
+- 🛡️ **Two-factor authentication** — Email-code 2FA at login with anti-spam and bad-attempt detection (currently off — see the email notice above).
 - 🔐 **Access Control** — Each member only sees what they're allowed to, with role-based permissions
 
 **⚡ Real-Time**
@@ -131,7 +128,7 @@
 **How it works (in plain words):**
 1. **The app** talks to the server over a secure connection (HTTPS), and a separate live channel keeps everything in sync in real time
 2. **The live channel** can keep 2 sessions open at once for AuroriaLink (1 desktop + 1 mobile). The same design supports 2 extra sessions for Axomind in parallel — 4 active sessions total per account
-3. **The server** protects accounts on several layers: route checks, attack protection, AES-256-GCM encryption, and a unique token per session. Two-factor authentication is built in and kept independent from the regular login — it's off for now because of the email issue
+3. **The server** protects accounts on several layers: route checks, attack protection, AES-256-GCM encryption, and a unique token per session
 4. **The database** stores everything encrypted, keeps data only as long as needed, and is tuned for fast reads on conversations and messages
 
 </details>
@@ -147,16 +144,6 @@
 | Linux    | ✅ Supported           |
 | macOS    | ❌ Not yet supported   |
 | iOS      | ❌ Not yet supported   |
-
----
-
-## 🚀 Installation
-
-Choose your platform for detailed installation instructions:
-
-- **[Android Installation Guide](INSTALL_ANDROID.md)** - APK installation for all Android versions
-- **[Windows Installation Guide](INSTALL_WINDOWS.md)** - ZIP installation for Windows 10+
-- **[Linux Installation Guide](INSTALL_LINUX.md)** - Binary installation for Debian 13
 
 ---
 
@@ -297,7 +284,7 @@ CPU peaked around 80 % per core during the burst; memory and disk usage remained
 | Concurrent active users (normal usage) | ~600 |
 | Total daily users (with realistic turnover) | ~2,000 |
 
-In normal usage, an active user generates roughly one to two small requests per minute. The client keeps a local copy of the data and only asks the server for what has changed since the last sync, which lowers the real request volume by an order of magnitude compared to the burst test.
+In normal usage, an active user generates roughly one to two small requests per minute — an order of magnitude below the burst test rate.
 
 ### Cost comparison
 
@@ -315,7 +302,6 @@ Across both scenarios, the self-hosted setup runs at roughly 85–95 % below the
 - The client keeps a local copy of the data and reads it directly; the server is only contacted for what has actually changed since the last sync.
 - An in-memory cache sits in front of the database, so most reads never reach the disk.
 - Deletions are propagated as small markers, so clients clean up locally without a full re-sync.
-- Result: an active user generates roughly one to two small requests per minute, not a continuous stream.
 
 ### Encryption at rest (observable)
 
@@ -403,53 +389,13 @@ The application source code is proprietary and kept private as a deliberate secu
   <p><strong>Une messagerie d'équipe privée et chiffrée.</strong></p>
 </div>
 
-**AuroriaLink** — messagerie chiffrée et privée pour les équipes. Canaux de groupe, partage de fichiers, 26 thèmes (clair + sombre), zéro tracking.
-
-### ⚠️ Statut du projet : Version Beta
+## ⚠️ Statut du projet : Version Beta
 
 > Ce projet est en développement actif. Des bugs et comportements inattendus sont probables. Les retours sont bienvenus.
 
 > **📧 À propos des emails**
 > L'envoi de mails sortants depuis le serveur autohébergé est bloqué au niveau du FAI, et les relais alternatifs n'ont pas donné de livraison fiable dans cette configuration. **Tout ce qui dépend de l'email est donc désactivé pour le moment** — vérification de compte, réinitialisation de mot de passe et double authentification. Les comptes fonctionnent sans étape email.
 > La couche email est intégrée et découplée du flux de connexion normal. Elle sera réactivée quand la plateforme passera chez un provider d'hébergement où l'envoi sortant est fiable — rien d'autre ne changera pour vous.
-
----
-
-## 🚀 Télécharger la dernière version
-
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="33%">
-        <a href="INSTALL_ANDROID.md">
-          <img src="https://img.shields.io/badge/Android-Installer-2E7D32?style=for-the-badge&logo=android&logoColor=white" alt="Installer pour Android"/>
-        </a>
-        <br/>
-        <sub>APK • <a href="INSTALL_ANDROID.md">Guide d'installation</a></sub>
-      </td>
-      <td align="center" width="33%">
-        <a href="INSTALL_WINDOWS.md">
-          <img src="https://img.shields.io/badge/Windows-Installer-3A6DF0?style=for-the-badge&logo=windows11&logoColor=white" alt="Installer pour Windows"/>
-        </a>
-        <br/>
-        <sub>ZIP • <a href="INSTALL_WINDOWS.md">Guide d'installation</a></sub>
-      </td>
-      <td align="center" width="33%">
-        <a href="INSTALL_LINUX.md">
-          <img src="https://img.shields.io/badge/Linux-Installer-8A6DF0?style=for-the-badge&logo=linux&logoColor=white" alt="Installer pour Linux"/>
-        </a>
-        <br/>
-        <sub>Debian 13 • <a href="INSTALL_LINUX.md">Guide d'installation</a></sub>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<p align="center">
-  <a href="https://github.com/Sebastien-VZN/auroria_link/releases">
-    <img src="https://img.shields.io/badge/Voir_toutes_les-Versions-gray?style=flat&logo=github" alt="Toutes les versions"/>
-  </a>
-</p>
 
 ---
 
@@ -464,11 +410,11 @@ The application source code is proprietary and kept private as a deliberate secu
 
 ---
 
-### ✨ Fonctionnalités Clés
+## ✨ Fonctionnalités Clés
 
 **🔒 Confidentialité & Sécurité**
 - 🔒 **Chiffrement fort** — Messages et fichiers chiffrés en AES-256-GCM, à la fois sur le serveur et lors de l'envoi. Vos conversations restent privées.
-- 🛡️ **Double authentification (intégrée, off pour l'instant)** — Code par email à la connexion, avec détection des tentatives suspectes. Conçue pour être activée ou désactivée facilement — actuellement désactivée à cause du problème d'email ci-dessus.
+- 🛡️ **Double authentification** — 2FA par code email à la connexion avec détection des tentatives suspectes (actuellement désactivée — voir le bloc email ci-dessus).
 - 🔐 **Contrôle d'Accès** — Chaque membre ne voit que ce à quoi il est autorisé, avec des permissions par rôle
 
 **⚡ Temps Réel**
@@ -507,7 +453,7 @@ The application source code is proprietary and kept private as a deliberate secu
 **Fonctionnement (en clair) :**
 1. **L'application** dialogue avec le serveur via une connexion sécurisée (HTTPS), et un canal temps réel séparé garde tout synchronisé en direct
 2. **Le canal temps réel** peut maintenir 2 sessions ouvertes pour AuroriaLink (1 desktop + 1 mobile). Le même design supporte 2 sessions supplémentaires pour Axomind en parallèle — 4 sessions actives au total par compte
-3. **Le serveur** protège les comptes sur plusieurs niveaux : vérifications des accès, protection contre les attaques, chiffrement AES-256-GCM, et un jeton unique par session. La double authentification est intégrée et indépendante du flux de connexion normal — désactivée pour l'instant à cause du problème d'email
+3. **Le serveur** protège les comptes sur plusieurs niveaux : vérifications des accès, protection contre les attaques, chiffrement AES-256-GCM, et un jeton unique par session
 4. **La base de données** stocke tout de façon chiffrée, ne conserve les données que le temps utile, et est optimisée pour des lectures rapides sur les conversations et les messages
 
 </details>
@@ -523,16 +469,6 @@ The application source code is proprietary and kept private as a deliberate secu
 | Linux      | ✅ Supporté                    |
 | macOS      | ❌ Non supporté pour le moment |
 | iOS        | ❌ Non supporté pour le moment |
-
----
-
-## 🚀 Instructions d'Installation
-
-Choisissez votre plateforme pour des instructions détaillées :
-
-- **[Guide d'Installation Android](INSTALL_ANDROID.md)** - Installation APK pour toutes les versions Android
-- **[Guide d'Installation Windows](INSTALL_WINDOWS.md)** - Installation ZIP pour Windows 10+
-- **[Guide d'Installation Linux](INSTALL_LINUX.md)** - Installation binaire pour Debian 13
 
 ---
 
@@ -602,7 +538,7 @@ Le CPU a culminé à environ 80 % par cœur pendant le burst ; mémoire et disqu
 | Utilisateurs actifs simultanés (usage normal) | ~600 |
 | Total utilisateurs par jour (avec rotation réaliste) | ~2 000 |
 
-En usage normal, un utilisateur actif génère environ une à deux petites requêtes par minute. Le client garde une copie locale des données et ne demande au serveur que ce qui a changé depuis la dernière synchronisation, ce qui réduit le volume réel de requêtes d'un ordre de grandeur par rapport au burst test.
+En usage normal, un utilisateur actif génère environ une à deux petites requêtes par minute — un ordre de grandeur en dessous du débit du burst test.
 
 ### Comparaison de coût
 
@@ -620,7 +556,6 @@ Sur les deux scénarios, la configuration autohébergée tourne à environ 85–
 - Le client garde une copie locale des données et la lit directement ; le serveur n'est contacté que pour ce qui a effectivement changé depuis la dernière synchronisation.
 - Un cache en mémoire vive est placé devant la base de données, donc la plupart des lectures ne touchent jamais le disque.
 - Les suppressions sont propagées sous forme de petits marqueurs : les clients nettoient en local sans re-synchronisation complète.
-- Résultat : un utilisateur actif génère environ une à deux petites requêtes par minute, pas un flux continu.
 
 ### Chiffrement au repos (observable)
 
