@@ -13,7 +13,7 @@
   </p>
 
   <p align="center">
-    <a href="#-version-française"><img src="https://img.shields.io/badge/🇫🇷-Lire_en_français-blue?style=for-the-badge" alt="Lire en français"/></a>
+    <a href="#-version-française"><img src="https://img.shields.io/badge/_-Lire_en_français-EF4135?style=for-the-badge&logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIyMCI%2BPHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMDA1NUE0Ii8%2BPHJlY3QgeD0iMTAiIHdpZHRoPSIxMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2ZmZmZmZiIvPjxyZWN0IHg9IjIwIiB3aWR0aD0iMTAiIGhlaWdodD0iMjAiIGZpbGw9IiNFRjQxMzUiLz48L3N2Zz4=" alt="Lire en français"/></a>
   </p>
 </div>
 
