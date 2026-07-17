@@ -1,7 +1,7 @@
 <div align="center">
   <img src="image/auroria_link_256.png" alt="AuroriaLink Logo" width="150"/>
   <h1>AuroriaLink</h1>
-  <p><strong>A real-time team messaging solution.</strong></p>
+  <p><strong>Encrypted team messaging on your own server. Like Discord, but self-hosted — no cloud, no middleman.</strong></p>
   
   <p>
     <img src="https://img.shields.io/badge/status-beta-blue?style=for-the-badge" alt="Project Status: Beta"/>
@@ -13,7 +13,7 @@
   </p>
 
   <p align="center">
-    <a href="#-version-française"><img src="https://img.shields.io/badge/🇫🇷-Lire_en_français-blue?style=flat-square" alt="Lire en français"/></a>
+    <a href="#-version-française"><img src="https://img.shields.io/badge/🇫🇷-Lire_en_français-blue?style=for-the-badge" alt="Lire en français"/></a>
   </p>
 </div>
 
@@ -73,6 +73,7 @@
 - [📊 Performance & Real Cost](#-performance--real-cost)
 - [🤖 Bot API](#-bot-api)
 - [🌐 About Axomind](#-about-axomind)
+- [🟢 Server Status](#-server-status)
 - [🤝 Bug Reports & Feedback](#-bug-reports--feedback)
 - [👤 Author](#-author)
 - [🇫🇷 Version Française](#-version-française)
@@ -84,8 +85,7 @@
 > This project is in active development. Bugs and unexpected behaviors are likely. Feedback is welcome.
 
 > **📧 About emails**
-> Outbound mail from the self-hosted server is blocked at the ISP level, and alternative relays haven't given reliable delivery for this setup. So **everything that would normally rely on email is switched off for now** — account verification, password reset, and two-factor authentication. Accounts work without any email step.
-> The email layer is built in and decoupled from the regular login flow. It will be turned back on once the platform moves to a hosting provider with reliable outbound mail — nothing else will change for you.
+> Email-based features (account verification, password reset, 2FA) are currently disabled. Accounts work without any email step.
 
 ---
 
@@ -93,7 +93,7 @@
 
 **🔒 Privacy & Security**
 - 🔒 **Strong Encryption** — Messages and files are encrypted with AES-256-GCM, both when stored on the server and while being sent. Your conversations stay private.
-- 🛡️ **Two-factor authentication** — Email-code 2FA at login with anti-spam and bad-attempt detection (currently off — see the email notice above).
+- 🛡️ **Two-factor authentication** — Email-code 2FA at login with anti-spam and bad-attempt detection (currently disabled).
 - 🔐 **Access Control** — Each member only sees what they're allowed to, with role-based permissions
 
 **⚡ Real-Time**
@@ -153,26 +153,36 @@
 
 ## 🎨 Gallery
 
+<p align="center">
+  <img src="image/desktop_1.jpg" alt="Desktop Screenshot 1" width="49%"/>
+  <img src="image/desktop_8.jpg" alt="Desktop Screenshot 8" width="49%"/>
+</p>
+<p align="center"><sub>Desktop view (left) · Desktop view (right)</sub></p>
+
+<p align="center">
+  <img src="image/mobil_0.jpg" alt="Mobile Screenshot 0" width="24%"/>
+  <img src="image/mobil_8.jpg" alt="Mobile Screenshot 8" width="24%"/>
+</p>
+<p align="center"><sub>Mobile view (left) · Mobile view (right)</sub></p>
+
+<details>
+<summary>📸 More screenshots — full desktop & mobile gallery</summary>
+
 ### 💻 Desktop Experience
 
 <p align="center">
-  <img src="image/desktop_1.jpg" alt="Desktop Screenshot 1" width="49%"/>
   <img src="image/desktop_2.jpg" alt="Desktop Screenshot 2" width="49%"/>
-</p>
-
-<p align="center">
   <img src="image/desktop_3.jpg" alt="Desktop Screenshot 3" width="49%"/>
+</p>
+
+<p align="center">
   <img src="image/desktop_4.jpg" alt="Desktop Screenshot 4" width="49%"/>
-</p>
-
-<p align="center">
   <img src="image/desktop_5.jpg" alt="Desktop Screenshot 5" width="49%"/>
-  <img src="image/desktop_6.jpg" alt="Desktop Screenshot 6" width="49%"/>
 </p>
 
 <p align="center">
+  <img src="image/desktop_6.jpg" alt="Desktop Screenshot 6" width="49%"/>
   <img src="image/desktop_7.jpg" alt="Desktop Screenshot 7" width="49%"/>
-  <img src="image/desktop_8.jpg" alt="Desktop Screenshot 8" width="49%"/>
 </p>
 
 <p align="center">
@@ -197,48 +207,42 @@
 ### 📱 Mobile Experience
 
 <p align="center">
-  <img src="image/mobil_0.jpg" alt="Mobile Screenshot 0" width="19%"/>
   <img src="image/mobil_1.jpg" alt="Mobile Screenshot 1" width="19%"/>
   <img src="image/mobil_2.jpg" alt="Mobile Screenshot 2" width="19%"/>
   <img src="image/mobil_3.jpg" alt="Mobile Screenshot 3" width="19%"/>
   <img src="image/mobil_4.jpg" alt="Mobile Screenshot 4" width="19%"/>
+  <img src="image/mobil_5.jpg" alt="Mobile Screenshot 5" width="19%"/>
 </p>
 
 <p align="center">
-  <img src="image/mobil_5.jpg" alt="Mobile Screenshot 5" width="19%"/>
   <img src="image/mobil_5.png" alt="Mobile Screenshot 5 (alt)" width="19%"/>
   <img src="image/mobil_6.jpg" alt="Mobile Screenshot 6" width="19%"/>
   <img src="image/mobil_7.jpg" alt="Mobile Screenshot 7" width="19%"/>
-  <img src="image/mobil_8.jpg" alt="Mobile Screenshot 8" width="19%"/>
+  <img src="image/mobil_9.jpg" alt="Mobile Screenshot 9" width="19%"/>
+  <img src="image/mobil_10.jpg" alt="Mobile Screenshot 10" width="19%"/>
 </p>
 
 <p align="center">
-  <img src="image/mobil_9.jpg" alt="Mobile Screenshot 9" width="19%"/>
-  <img src="image/mobil_10.jpg" alt="Mobile Screenshot 10" width="19%"/>
   <img src="image/mobil_11.jpg" alt="Mobile Screenshot 11" width="19%"/>
   <img src="image/mobil_12.jpg" alt="Mobile Screenshot 12" width="19%"/>
   <img src="image/mobil_13.jpg" alt="Mobile Screenshot 13" width="19%"/>
 </p>
 
+</details>
+
 ---
 
 ## 📊 Performance & Real Cost
 
-Hardware specs, load test results (200 users burst, 0 failures) and infrastructure cost analysis.
+Hardware specs, load test results (200 users burst, 0 failures) and infrastructure cost analysis — shared with Axomind, since both run on the same server.
 
-→ **[Read detailed analysis](PERF.md)**
+→ **[Read detailed analysis](https://github.com/Sebastien-VZN/axomind/blob/main/PERF.md)**
 
 ---
 
 ## 🤖 Bot API
 
-<div align="center">
-  <a href="API_BOT.md">
-    <img src="https://img.shields.io/badge/Bot_API-Documentation-green?style=for-the-badge&logo=robot&logoColor=white" alt="Bot API Documentation"/>
-  </a>
-</div>
-
-Send automated messages into any conversation from your CI/CD, monitoring, or automation tools (n8n, Zapier, Make...). → **[Full documentation](API_BOT.md)**
+Send automated messages into any conversation from your CI/CD, monitoring, or automation tools (n8n, Zapier, Make...). → **[Full documentation](https://github.com/Sebastien-VZN/axomind/blob/main/API_BOT.md)**
 
 ---
 
@@ -255,16 +259,21 @@ Send automated messages into any conversation from your CI/CD, monitoring, or au
 
 The core idea behind Axomind is **contextual linking**: each conversation is attached to a task or a mind map node, so the discussion and the work it relates to stay in the same place. AuroriaLink remains available as a **standalone messaging app** for people who only need the chat side.
 
-### Custom Modular Framework
-
-Both AuroriaLink and Axomind run on a **custom modular framework** built around a few simple rules:
-* **Modular** — the interface, the logic, and the services stay independent of one another
-* **Flexible** — pieces work together without being tied together
-* **Context-aware** — the app adapts to the user and the device
-* **Clean layers** — interface, logic, data, and settings each live in their own layer
+Both AuroriaLink and Axomind run on the same custom modular framework. → **[See details on the Axomind repo](https://github.com/Sebastien-VZN/axomind#-custom-modular-framework)**
 
 <div align="center">
   <a href="https://github.com/Sebastien-VZN/axomind"><img src="https://img.shields.io/badge/Axomind-Repository-3423A6?style=for-the-badge&logo=github&logoColor=white" alt="Axomind Repository"/></a>
+</div>
+
+---
+
+## 🟢 Server Status
+
+<div align="center">
+  <a href="https://quantive-studio.xyz/status.php">
+    <img src="https://img.shields.io/badge/Server-Status-8A6DF0?style=for-the-badge&logo=serverless&logoColor=white" alt="Server Status"/>
+  </a>
+  <p><sub>Check the live status of AuroriaLink services</sub></p>
 </div>
 
 ---
@@ -287,13 +296,10 @@ The application source code is proprietary and kept private as a deliberate secu
 
 ## 🇫🇷 Version Française
 
-<details>
-<summary>Cliquez pour lire en français</summary>
-
 <div align="center">
   <img src="image/auroria_link_256.png" alt="Logo AuroriaLink" width="150"/>
   <h1>AuroriaLink</h1>
-  <p><strong>Une messagerie d'équipe privée et chiffrée.</strong></p>
+  <p><strong>Messagerie d'équipe chiffrée sur votre propre serveur. Comme Discord, mais autohébergé — sans cloud, sans intermédiaire.</strong></p>
 </div>
 
 ## ⚠️ Statut du projet : Version Beta
@@ -301,8 +307,7 @@ The application source code is proprietary and kept private as a deliberate secu
 > Ce projet est en développement actif. Des bugs et comportements inattendus sont probables. Les retours sont bienvenus.
 
 > **📧 À propos des emails**
-> L'envoi de mails sortants depuis le serveur autohébergé est bloqué au niveau du FAI, et les relais alternatifs n'ont pas donné de livraison fiable dans cette configuration. **Tout ce qui dépend de l'email est donc désactivé pour le moment** — vérification de compte, réinitialisation de mot de passe et double authentification. Les comptes fonctionnent sans étape email.
-> La couche email est intégrée et découplée du flux de connexion normal. Elle sera réactivée quand la plateforme passera chez un provider d'hébergement où l'envoi sortant est fiable — rien d'autre ne changera pour vous.
+> Les fonctionnalités liées à l'email (vérification de compte, réinitialisation de mot de passe, 2FA) sont actuellement désactivées. Les comptes fonctionnent sans étape email.
 
 ---
 
@@ -321,7 +326,7 @@ The application source code is proprietary and kept private as a deliberate secu
 
 **🔒 Confidentialité & Sécurité**
 - 🔒 **Chiffrement fort** — Messages et fichiers chiffrés en AES-256-GCM, à la fois sur le serveur et lors de l'envoi. Vos conversations restent privées.
-- 🛡️ **Double authentification** — 2FA par code email à la connexion avec détection des tentatives suspectes (actuellement désactivée — voir le bloc email ci-dessus).
+- 🛡️ **Double authentification** — 2FA par code email à la connexion avec détection des tentatives suspectes (désactivée pour le moment).
 - 🔐 **Contrôle d'Accès** — Chaque membre ne voit que ce à quoi il est autorisé, avec des permissions par rôle
 
 **⚡ Temps Réel**
@@ -381,26 +386,36 @@ The application source code is proprietary and kept private as a deliberate secu
 
 ## 🎨 Galerie
 
+<p align="center">
+  <img src="image/desktop_1.jpg" alt="Capture desktop 1" width="49%"/>
+  <img src="image/desktop_8.jpg" alt="Capture desktop 8" width="49%"/>
+</p>
+<p align="center"><sub>Vue desktop (gauche) · Vue desktop (droite)</sub></p>
+
+<p align="center">
+  <img src="image/mobil_0.jpg" alt="Capture mobile 0" width="24%"/>
+  <img src="image/mobil_8.jpg" alt="Capture mobile 8" width="24%"/>
+</p>
+<p align="center"><sub>Vue mobile (gauche) · Vue mobile (droite)</sub></p>
+
+<details>
+<summary>📸 Plus de captures — galerie desktop & mobile complète</summary>
+
 ### 💻 Expérience Desktop
 
 <p align="center">
-  <img src="image/desktop_1.jpg" alt="Capture desktop 1" width="49%"/>
   <img src="image/desktop_2.jpg" alt="Capture desktop 2" width="49%"/>
-</p>
-
-<p align="center">
   <img src="image/desktop_3.jpg" alt="Capture desktop 3" width="49%"/>
+</p>
+
+<p align="center">
   <img src="image/desktop_4.jpg" alt="Capture desktop 4" width="49%"/>
-</p>
-
-<p align="center">
   <img src="image/desktop_5.jpg" alt="Capture desktop 5" width="49%"/>
-  <img src="image/desktop_6.jpg" alt="Capture desktop 6" width="49%"/>
 </p>
 
 <p align="center">
+  <img src="image/desktop_6.jpg" alt="Capture desktop 6" width="49%"/>
   <img src="image/desktop_7.jpg" alt="Capture desktop 7" width="49%"/>
-  <img src="image/desktop_8.jpg" alt="Capture desktop 8" width="49%"/>
 </p>
 
 <p align="center">
@@ -425,48 +440,42 @@ The application source code is proprietary and kept private as a deliberate secu
 ### 📱 Expérience Mobile
 
 <p align="center">
-  <img src="image/mobil_0.jpg" alt="Capture mobile 0" width="19%"/>
   <img src="image/mobil_1.jpg" alt="Capture mobile 1" width="19%"/>
   <img src="image/mobil_2.jpg" alt="Capture mobile 2" width="19%"/>
   <img src="image/mobil_3.jpg" alt="Capture mobile 3" width="19%"/>
   <img src="image/mobil_4.jpg" alt="Capture mobile 4" width="19%"/>
+  <img src="image/mobil_5.jpg" alt="Capture mobile 5" width="19%"/>
 </p>
 
 <p align="center">
-  <img src="image/mobil_5.jpg" alt="Capture mobile 5" width="19%"/>
   <img src="image/mobil_5.png" alt="Capture mobile 5 (alt)" width="19%"/>
   <img src="image/mobil_6.jpg" alt="Capture mobile 6" width="19%"/>
   <img src="image/mobil_7.jpg" alt="Capture mobile 7" width="19%"/>
-  <img src="image/mobil_8.jpg" alt="Capture mobile 8" width="19%"/>
+  <img src="image/mobil_9.jpg" alt="Capture mobile 9" width="19%"/>
+  <img src="image/mobil_10.jpg" alt="Capture mobile 10" width="19%"/>
 </p>
 
 <p align="center">
-  <img src="image/mobil_9.jpg" alt="Capture mobile 9" width="19%"/>
-  <img src="image/mobil_10.jpg" alt="Capture mobile 10" width="19%"/>
   <img src="image/mobil_11.jpg" alt="Capture mobile 11" width="19%"/>
   <img src="image/mobil_12.jpg" alt="Capture mobile 12" width="19%"/>
   <img src="image/mobil_13.jpg" alt="Capture mobile 13" width="19%"/>
 </p>
 
+</details>
+
 ---
 
 ## 📊 Performance & Coût Réel
 
-Spécifications matériel, résultats des tests de charge (200 users burst, 0 échec) et analyse des coûts d'infrastructure.
+Spécifications matériel, résultats des tests de charge (200 users burst, 0 échec) et analyse des coûts d'infrastructure — partagés avec Axomind, les deux tournant sur le même serveur.
 
-→ **[Lire l'analyse détaillée](PERF.md)**
+→ **[Lire l'analyse détaillée](https://github.com/Sebastien-VZN/axomind/blob/main/PERF.md)**
 
 ---
 
 ## 🤖 API Bot
 
-<div align="center">
-  <a href="API_BOT.md">
-    <img src="https://img.shields.io/badge/API_Bot-Documentation-green?style=for-the-badge&logo=robot&logoColor=white" alt="Documentation API Bot"/>
-  </a>
-</div>
-
-Envoyez des messages automatisés dans vos conversations depuis vos outils CI/CD, monitoring ou plateformes d'automatisation (n8n, Zapier, Make...). → **[Documentation complète](API_BOT.md)**
+Envoyez des messages automatisés dans vos conversations depuis vos outils CI/CD, monitoring ou plateformes d'automatisation (n8n, Zapier, Make...). → **[Documentation complète](https://github.com/Sebastien-VZN/axomind/blob/main/API_BOT.md)**
 
 ---
 
@@ -483,16 +492,21 @@ Envoyez des messages automatisés dans vos conversations depuis vos outils CI/CD
 
 L'idée centrale d'Axomind est le **lien contextuel** : chaque conversation est rattachée à une tâche ou à un nœud de carte mentale, pour que la discussion et le travail qui s'y rapporte restent au même endroit. AuroriaLink reste disponible comme **application de messagerie autonome** pour celles et ceux qui n'ont besoin que de la partie chat.
 
-### Framework Modulaire Personnalisé
-
-AuroriaLink et Axomind reposent sur un **framework modulaire personnalisé**, conçu autour de quelques règles simples :
-* **Modulaire** — l'interface, la logique et les services restent indépendants
-* **Souple** — les éléments collaborent sans être figés ensemble
-* **Adapté au contexte** — l'application s'ajuste à l'utilisateur et à l'appareil
-* **Couches nettes** — interface, logique, données et réglages vivent chacun dans leur propre couche
+AuroriaLink et Axomind reposent sur le même framework modulaire personnalisé. → **[Voir les détails sur le dépôt Axomind](https://github.com/Sebastien-VZN/axomind#-custom-modular-framework)**
 
 <div align="center">
   <a href="https://github.com/Sebastien-VZN/axomind"><img src="https://img.shields.io/badge/Axomind-Dépôt-3423A6?style=for-the-badge&logo=github&logoColor=white" alt="Dépôt Axomind"/></a>
+</div>
+
+---
+
+## 🟢 Statut du Serveur
+
+<div align="center">
+  <a href="https://quantive-studio.xyz/status.php">
+    <img src="https://img.shields.io/badge/Serveur-Statut-8A6DF0?style=for-the-badge&logo=serverless&logoColor=white" alt="Statut du Serveur"/>
+  </a>
+  <p><sub>Vérifiez le statut en direct des services AuroriaLink</sub></p>
 </div>
 
 ---
@@ -510,8 +524,6 @@ Le code source de l'application est propriétaire et reste privé par choix de s
 <div align="center">
   <a href="https://sebastien-vezzani.xyz/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-3423A6?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Lien vers le Portfolio"/></a>
 </div>
-
-</details>
 
 ---
 
